@@ -1,0 +1,12 @@
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\bin\Debug\AIO Game Assistant.exe.config
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\bin\Debug\AIO Game Assistant.exe
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\bin\Debug\AIO Game Assistant.pdb
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO Game Assistant.csprojResolveAssemblyReference.cache
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO_Game_Assistant.Form1.resources
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft.WorldofWarcraft.resources
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO_Game_Assistant.Properties.Resources.resources
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO Game Assistant.csproj.GenerateResource.Cache
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO Game Assistant.csproj.CoreCompileInputs.cache
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO Game Assistant.exe
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO Game Assistant.pdb
+C:\Users\Tenshi\Source\Repos\AIO Game Assistant\AIO Game Assistant\obj\Debug\AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft.Character_Profile.resources
