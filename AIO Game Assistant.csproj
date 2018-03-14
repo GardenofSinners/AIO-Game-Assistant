@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net.Http.WebRequest" />
@@ -74,11 +77,23 @@
     <Compile Include="Modular Windows\Games\World of Warcraft\WorldofWarcraft.Designer.cs">
       <DependentUpon>WorldofWarcraft.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Auction House.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Auction House.Designer.cs">
+      <DependentUpon>Auction House.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Character Profile.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Character Profile.Designer.cs">
       <DependentUpon>Character Profile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Realm Status.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modular Windows\User Control Forms\Games\World of Warcraft\Realm Status.Designer.cs">
+      <DependentUpon>Realm Status.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -88,8 +103,14 @@
     <EmbeddedResource Include="Modular Windows\Games\World of Warcraft\WorldofWarcraft.resx">
       <DependentUpon>WorldofWarcraft.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Modular Windows\User Control Forms\Games\World of Warcraft\Auction House.resx">
+      <DependentUpon>Auction House.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Modular Windows\User Control Forms\Games\World of Warcraft\Character Profile.resx">
       <DependentUpon>Character Profile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modular Windows\User Control Forms\Games\World of Warcraft\Realm Status.resx">
+      <DependentUpon>Realm Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +122,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,6 +137,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Modular Windows\Games\World of Warcraft\External Data\" />
     <Folder Include="Modular Windows\Options\" />
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +190,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Wrist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkCircleGreen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\xCircleRed.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -73,6 +73,16 @@ namespace AIO_Game_Assistant.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap checkCircleGreen {
+            get {
+                object obj = ResourceManager.GetObject("checkCircleGreen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Chest {
             get {
                 object obj = ResourceManager.GetObject("Chest", resourceCulture);
@@ -226,6 +236,16 @@ namespace AIO_Game_Assistant.Properties {
         internal static System.Drawing.Bitmap Wrist {
             get {
                 object obj = ResourceManager.GetObject("Wrist", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap xCircleRed {
+            get {
+                object obj = ResourceManager.GetObject("xCircleRed", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

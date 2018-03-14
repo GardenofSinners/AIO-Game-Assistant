@@ -19,6 +19,8 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
         {
             InitializeComponent();
             character_Profile1.Hide();
+            auction_House1.Hide();
+            realm_Status1.Hide();
         }
 
         private void close_Click(object sender, EventArgs e)
@@ -29,15 +31,55 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(character_Profile1.Visible == true)
+            introduction.Visible = false;
+            if (character_Profile1.Visible == true)
             {
                 character_Profile1.Hide();
             } else
             {
-                introduction.Visible = false;
                 character_Profile1.Visible = true;
             }        
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            introduction.Visible = false;
+
+            if (auction_House1.Visible == true)
+            {
+                character_Profile1.Hide();
+                auction_House1.Hide();
+            }
+            else
+            {
+                character_Profile1.Visible = false;
+                auction_House1.Visible = true;
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            introduction.Visible = false;
+
+            if (realm_Status1.Visible == true)
+            {
+                character_Profile1.Hide();
+                auction_House1.Hide();
+                realm_Status1.Hide();
+            }
+            else
+            {
+                character_Profile1.Visible = false;
+                auction_House1.Visible = false;
+                realm_Status1.Visible = true;
+            }
+        }
+
+
+
+
 
         //Allows the form to be dragged
         protected override void WndProc(ref Message m)
