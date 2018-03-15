@@ -18,6 +18,17 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
     public partial class Auction_House : UserControl
     {
 
+        private static Auction_House _instance;
+
+        public static Auction_House Instance {
+            get {
+                if (_instance == null)
+                    _instance = new Auction_House();
+                return _instance;
+
+            }
+        }
+
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
 
         public Auction_House()

@@ -9,6 +9,18 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 {
     public partial class Character_Profile : UserControl
     {
+
+        private static Character_Profile _instance;
+
+        public static Character_Profile Instance {
+            get {
+                if (_instance == null)
+                    _instance = new Character_Profile();
+                return _instance;
+
+            }
+        }
+
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
 
         public Character_Profile()
@@ -27,25 +39,25 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
+                //RegionMethod(realmAPIURL);
             }
             else if (regionList.SelectedIndex == 1)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
+                //RegionMethod(realmAPIURL);
             }
             else if (regionList.SelectedIndex == 2)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
+                //RegionMethod(realmAPIURL);
             }
             else if (regionList.SelectedIndex == 3)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
+                //RegionMethod(realmAPIURL);
             }
 
             return Task.CompletedTask;
@@ -65,7 +77,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             //Runs through all the values and gets the value of "Name" for each value.
             for (int i = 0; i < dict["realms"].Count; i++)
             {
-                realmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
+                //realmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
             }
 
         }

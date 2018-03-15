@@ -14,6 +14,18 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 {
     public partial class Guild_Profile : UserControl
     {
+
+        private static Guild_Profile _instance;
+
+        public static Guild_Profile Instance {
+            get {
+                if (_instance == null)
+                    _instance = new Guild_Profile();
+                return _instance;
+
+            }
+        }
+
         WoWHelper _WoWHelper { get; }
 
         public Guild_Profile()

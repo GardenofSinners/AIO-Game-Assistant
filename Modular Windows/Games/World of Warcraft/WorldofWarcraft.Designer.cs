@@ -33,26 +33,25 @@
             this.CloseWoW = new System.Windows.Forms.Label();
             this.Introduction = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
+            this.TokensButton = new System.Windows.Forms.Button();
             this.RegionList = new System.Windows.Forms.ComboBox();
             this.GuildProfileButton = new System.Windows.Forms.Button();
             this.RealmStatusButton = new System.Windows.Forms.Button();
             this.AHButton = new System.Windows.Forms.Button();
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
-            this.RealmStatus = new AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft.Realm_Status();
-            this.AuctionHouse = new AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft.Auction_House();
-            this.CharacterProfile = new AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft.Character_Profile();
-            this.GuildProfile = new AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft.Guild_Profile();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // ChracterProfileButton
             // 
-            this.ChracterProfileButton.Location = new System.Drawing.Point(0, 3);
+            this.ChracterProfileButton.Location = new System.Drawing.Point(1, 3);
             this.ChracterProfileButton.Name = "ChracterProfileButton";
-            this.ChracterProfileButton.Size = new System.Drawing.Size(115, 49);
+            this.ChracterProfileButton.Size = new System.Drawing.Size(113, 48);
             this.ChracterProfileButton.TabIndex = 0;
             this.ChracterProfileButton.Text = "Character Profile";
             this.ChracterProfileButton.UseVisualStyleBackColor = true;
@@ -73,7 +72,7 @@
             // 
             this.Introduction.AutoSize = true;
             this.Introduction.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.Introduction.Location = new System.Drawing.Point(144, 173);
+            this.Introduction.Location = new System.Drawing.Point(31, 163);
             this.Introduction.Name = "Introduction";
             this.Introduction.Size = new System.Drawing.Size(785, 240);
             this.Introduction.TabIndex = 4;
@@ -81,6 +80,7 @@
             // 
             // Panel1
             // 
+            this.Panel1.Controls.Add(this.TokensButton);
             this.Panel1.Controls.Add(this.RegionList);
             this.Panel1.Controls.Add(this.GuildProfileButton);
             this.Panel1.Controls.Add(this.RealmStatusButton);
@@ -90,6 +90,16 @@
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(115, 529);
             this.Panel1.TabIndex = 5;
+            // 
+            // TokensButton
+            // 
+            this.TokensButton.Location = new System.Drawing.Point(2, 223);
+            this.TokensButton.Name = "TokensButton";
+            this.TokensButton.Size = new System.Drawing.Size(113, 48);
+            this.TokensButton.TabIndex = 76;
+            this.TokensButton.Text = "Tokens";
+            this.TokensButton.UseVisualStyleBackColor = true;
+            this.TokensButton.Click += new System.EventHandler(this.TokensButton_Click);
             // 
             // RegionList
             // 
@@ -105,14 +115,13 @@
             this.RegionList.Name = "RegionList";
             this.RegionList.Size = new System.Drawing.Size(112, 21);
             this.RegionList.TabIndex = 75;
-            this.RegionList.SelectedIndex = 0;
             this.RegionList.SelectedIndexChanged += new System.EventHandler(this.RegionList_SelectedIndexChanged);
             // 
             // GuildProfileButton
             // 
-            this.GuildProfileButton.Location = new System.Drawing.Point(0, 58);
+            this.GuildProfileButton.Location = new System.Drawing.Point(1, 58);
             this.GuildProfileButton.Name = "GuildProfileButton";
-            this.GuildProfileButton.Size = new System.Drawing.Size(115, 49);
+            this.GuildProfileButton.Size = new System.Drawing.Size(113, 48);
             this.GuildProfileButton.TabIndex = 3;
             this.GuildProfileButton.Text = "Guild Profile";
             this.GuildProfileButton.UseVisualStyleBackColor = true;
@@ -120,9 +129,9 @@
             // 
             // RealmStatusButton
             // 
-            this.RealmStatusButton.Location = new System.Drawing.Point(0, 113);
+            this.RealmStatusButton.Location = new System.Drawing.Point(1, 113);
             this.RealmStatusButton.Name = "RealmStatusButton";
-            this.RealmStatusButton.Size = new System.Drawing.Size(115, 49);
+            this.RealmStatusButton.Size = new System.Drawing.Size(113, 48);
             this.RealmStatusButton.TabIndex = 2;
             this.RealmStatusButton.Text = "Realm Status";
             this.RealmStatusButton.UseVisualStyleBackColor = true;
@@ -130,9 +139,9 @@
             // 
             // AHButton
             // 
-            this.AHButton.Location = new System.Drawing.Point(0, 168);
+            this.AHButton.Location = new System.Drawing.Point(1, 168);
             this.AHButton.Name = "AHButton";
-            this.AHButton.Size = new System.Drawing.Size(115, 49);
+            this.AHButton.Size = new System.Drawing.Size(113, 48);
             this.AHButton.TabIndex = 1;
             this.AHButton.Text = "Auction House";
             this.AHButton.UseVisualStyleBackColor = true;
@@ -157,47 +166,22 @@
             this.Logo.TabIndex = 0;
             this.Logo.TabStop = false;
             // 
-            // RealmStatus
+            // panel3
             // 
-            this.RealmStatus.Location = new System.Drawing.Point(114, 19);
-            this.RealmStatus.Name = "RealmStatus";
-            this.RealmStatus.Size = new System.Drawing.Size(994, 596);
-            this.RealmStatus.TabIndex = 8;
-            // 
-            // AuctionHouse
-            // 
-            this.AuctionHouse.Location = new System.Drawing.Point(114, 19);
-            this.AuctionHouse.Name = "AuctionHouse";
-            this.AuctionHouse.Size = new System.Drawing.Size(994, 596);
-            this.AuctionHouse.TabIndex = 7;
-            // 
-            // CharacterProfile
-            // 
-            this.CharacterProfile.Location = new System.Drawing.Point(115, 18);
-            this.CharacterProfile.Name = "CharacterProfile";
-            this.CharacterProfile.Size = new System.Drawing.Size(994, 596);
-            this.CharacterProfile.TabIndex = 3;
-            // 
-            // GuildProfile
-            // 
-            this.GuildProfile.Location = new System.Drawing.Point(114, 19);
-            this.GuildProfile.Name = "GuildProfile";
-            this.GuildProfile.Size = new System.Drawing.Size(994, 596);
-            this.GuildProfile.TabIndex = 9;
+            this.panel3.Controls.Add(this.Introduction);
+            this.panel3.Location = new System.Drawing.Point(117, 48);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(986, 568);
+            this.panel3.TabIndex = 7;
             // 
             // WorldofWarcraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1105, 614);
-            this.Controls.Add(this.AuctionHouse);
-            this.Controls.Add(this.RealmStatus);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.Panel2);
-            this.Controls.Add(this.Introduction);
             this.Controls.Add(this.Panel1);
-            this.Controls.Add(this.CloseWoW);
-            this.Controls.Add(this.CharacterProfile);
-            this.Controls.Add(this.GuildProfile);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -208,8 +192,9 @@
             this.Panel1.ResumeLayout(false);
             this.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -217,17 +202,15 @@
 
         private System.Windows.Forms.Button ChracterProfileButton;
         private System.Windows.Forms.Label CloseWoW;
-        private User_Control_Forms.Games.World_of_Warcraft.Character_Profile CharacterProfile;
         private System.Windows.Forms.Label Introduction;
         private System.Windows.Forms.Panel Panel1;
         private System.Windows.Forms.PictureBox Logo;
         private System.Windows.Forms.Panel Panel2;
         private System.Windows.Forms.Button AHButton;
-        private User_Control_Forms.Games.World_of_Warcraft.Auction_House AuctionHouse;
-        private User_Control_Forms.Games.World_of_Warcraft.Realm_Status RealmStatus;
         private System.Windows.Forms.Button RealmStatusButton;
         private System.Windows.Forms.Button GuildProfileButton;
-        private User_Control_Forms.Games.World_of_Warcraft.Guild_Profile GuildProfile;
         public System.Windows.Forms.ComboBox RegionList;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button TokensButton;
     }
 }

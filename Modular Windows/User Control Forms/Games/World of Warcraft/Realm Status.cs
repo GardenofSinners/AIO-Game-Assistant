@@ -11,6 +11,17 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
     {
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
 
+        private static Realm_Status _instance;
+
+        public static Realm_Status Instance {
+            get {
+                if (_instance == null)
+                    _instance = new Realm_Status();
+                return _instance;
+
+            }
+        }
+
         public Realm_Status()
         {
             InitializeComponent();

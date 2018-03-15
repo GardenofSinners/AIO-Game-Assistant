@@ -1,4 +1,5 @@
 ﻿using AIO_Game_Assistant.Modular_Windows.Options;
+using AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,18 +15,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
         {
             InitializeComponent();
             //RegionList.SelectedIndex = 0;
-
-            //Hide components
-            CharacterProfile.Hide();
-            GuildProfile.Hide();
-            AuctionHouse.Hide();
-            RealmStatus.Hide();
-
-            //Send to back
-            CharacterProfile.SendToBack();
-            GuildProfile.SendToBack();
-            AuctionHouse.SendToBack();
-            RealmStatus.SendToBack();
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -37,47 +26,30 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
         private void CharacterProfileButton_Click(object sender, EventArgs e)
         {
             Introduction.Visible = false;
-            if (CharacterProfile.Visible == true)
+            if (!panel3.Controls.Contains(Character_Profile.Instance))
             {
-                CharacterProfile.Hide();
-                CharacterProfile.SendToBack();
-                GuildProfile.Hide();
-                GuildProfile.SendToBack();
-                AuctionHouse.Hide();
-                AuctionHouse.SendToBack();
-                RealmStatus.Hide();
-                RealmStatus.SendToBack();
-
-            } else {
-                AuctionHouse.Hide();
-                RealmStatus.Hide();
-                CharacterProfile.BringToFront();
-                CharacterProfile.Show();
-            }     
+                panel3.Controls.Add(Character_Profile.Instance);
+                Character_Profile.Instance.Dock = DockStyle.Fill;
+                Character_Profile.Instance.BringToFront();
+            }
+            else
+            {
+                panel3.Controls.Remove(Character_Profile.Instance);
+            }
         }
 
         private void GuildProfileButton_Click(object sender, EventArgs e)
         {
             Introduction.Visible = false;
-            if (GuildProfile.Visible == true)
+            if (!panel3.Controls.Contains(Guild_Profile.Instance))
             {
-                CharacterProfile.Hide();
-                CharacterProfile.SendToBack();
-                GuildProfile.Hide();
-                GuildProfile.SendToBack();
-                AuctionHouse.Hide();
-                AuctionHouse.SendToBack();
-                RealmStatus.Hide();
-                RealmStatus.SendToBack();
-
+                panel3.Controls.Add(Guild_Profile.Instance);
+                Guild_Profile.Instance.Dock = DockStyle.Fill;
+                Guild_Profile.Instance.BringToFront();
             }
             else
             {
-                AuctionHouse.Hide();
-                RealmStatus.Hide();
-                CharacterProfile.Hide();
-                GuildProfile.BringToFront();
-                GuildProfile.Show();
+                panel3.Controls.Remove(Guild_Profile.Instance);
             }
         }
 
@@ -86,22 +58,15 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 
             Introduction.Visible = false;
 
-            if (AuctionHouse.Visible == true)
+            if (!panel3.Controls.Contains(Auction_House.Instance))
             {
-                CharacterProfile.Hide();
-                CharacterProfile.SendToBack();
-                GuildProfile.Hide();
-                GuildProfile.SendToBack();
-                AuctionHouse.Hide();
-                AuctionHouse.SendToBack();
-                RealmStatus.Hide();
+                panel3.Controls.Add(Auction_House.Instance);
+                Auction_House.Instance.Dock = DockStyle.Fill;
+                Auction_House.Instance.BringToFront();
             }
             else
             {
-                CharacterProfile.Hide();
-                RealmStatus.Hide();
-                AuctionHouse.BringToFront();
-                AuctionHouse.Show();
+                panel3.Controls.Remove(Auction_House.Instance);
             }
         }
 
@@ -110,24 +75,29 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 
             Introduction.Visible = false;
 
-            if (RealmStatus.Visible == true)
+            if (!panel3.Controls.Contains(Realm_Status.Instance))
             {
-                CharacterProfile.Hide();
-                CharacterProfile.SendToBack();
-                GuildProfile.Hide();
-                GuildProfile.SendToBack();
-                AuctionHouse.Hide();
-                AuctionHouse.SendToBack();
-                RealmStatus.Hide();
-                RealmStatus.SendToBack();
+                panel3.Controls.Add(Realm_Status.Instance);
+                Realm_Status.Instance.Dock = DockStyle.Fill;
+                Realm_Status.Instance.BringToFront();
             }
             else
             {
-                CharacterProfile.Hide();
-                GuildProfile.Hide();
-                AuctionHouse.Hide();
-                RealmStatus.BringToFront();
-                RealmStatus.Show();
+                panel3.Controls.Remove(Realm_Status.Instance);
+            }
+        }
+
+        private void TokensButton_Click(object sender, EventArgs e)
+        {
+            Introduction.Visible = false;
+            if (!panel3.Controls.Contains(Tokens.Instance))
+            {
+                panel3.Controls.Add(Tokens.Instance);
+                Tokens.Instance.BringToFront();
+            }
+            else
+            {
+                panel3.Controls.Remove(Tokens.Instance);
             }
         }
 
