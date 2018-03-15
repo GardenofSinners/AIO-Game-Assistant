@@ -62,7 +62,7 @@
             this.shoulderSlot = new System.Windows.Forms.PictureBox();
             this.neckSlot = new System.Windows.Forms.PictureBox();
             this.headSlot = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SearchCharacterButton = new System.Windows.Forms.Button();
             this.regionList = new System.Windows.Forms.ComboBox();
             this.realmList = new System.Windows.Forms.ComboBox();
             this.characterName = new System.Windows.Forms.TextBox();
@@ -95,7 +95,7 @@
             // 
             this.trinket2Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.trinket2Name.BackColor = System.Drawing.Color.Transparent;
-            this.trinket2Name.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.trinket2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.trinket2Name.ForeColor = System.Drawing.Color.White;
             this.trinket2Name.Location = new System.Drawing.Point(748, 488);
             this.trinket2Name.Name = "trinket2Name";
@@ -111,7 +111,7 @@
             // 
             this.trinket1Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.trinket1Name.BackColor = System.Drawing.Color.Transparent;
-            this.trinket1Name.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.trinket1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.trinket1Name.ForeColor = System.Drawing.Color.White;
             this.trinket1Name.Location = new System.Drawing.Point(747, 427);
             this.trinket1Name.Name = "trinket1Name";
@@ -127,7 +127,7 @@
             // 
             this.ring2Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ring2Name.BackColor = System.Drawing.Color.Transparent;
-            this.ring2Name.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.ring2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.ring2Name.ForeColor = System.Drawing.Color.White;
             this.ring2Name.Location = new System.Drawing.Point(748, 364);
             this.ring2Name.Name = "ring2Name";
@@ -143,7 +143,7 @@
             // 
             this.ring1Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.ring1Name.BackColor = System.Drawing.Color.Transparent;
-            this.ring1Name.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.ring1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.ring1Name.ForeColor = System.Drawing.Color.White;
             this.ring1Name.Location = new System.Drawing.Point(748, 302);
             this.ring1Name.Name = "ring1Name";
@@ -159,7 +159,7 @@
             // 
             this.feetName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.feetName.BackColor = System.Drawing.Color.Transparent;
-            this.feetName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.feetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.feetName.ForeColor = System.Drawing.Color.White;
             this.feetName.Location = new System.Drawing.Point(748, 240);
             this.feetName.Name = "feetName";
@@ -190,7 +190,7 @@
             // 
             this.waistName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.waistName.BackColor = System.Drawing.Color.Transparent;
-            this.waistName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.waistName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waistName.ForeColor = System.Drawing.Color.White;
             this.waistName.Location = new System.Drawing.Point(748, 116);
             this.waistName.Name = "waistName";
@@ -206,7 +206,7 @@
             // 
             this.handsName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.handsName.BackColor = System.Drawing.Color.Transparent;
-            this.handsName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.handsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.handsName.ForeColor = System.Drawing.Color.White;
             this.handsName.Location = new System.Drawing.Point(748, 54);
             this.handsName.Name = "handsName";
@@ -222,12 +222,12 @@
             // 
             this.wristName.AutoSize = true;
             this.wristName.BackColor = System.Drawing.Color.Transparent;
-            this.wristName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.wristName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.wristName.ForeColor = System.Drawing.Color.White;
             this.wristName.Location = new System.Drawing.Point(86, 488);
             this.wristName.Name = "wristName";
             this.wristName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.wristName.Size = new System.Drawing.Size(60, 16);
+            this.wristName.Size = new System.Drawing.Size(55, 13);
             this.wristName.TabIndex = 101;
             this.wristName.TabStop = true;
             this.wristName.Text = "linkLabel8";
@@ -236,12 +236,12 @@
             // 
             this.tabardName.AutoSize = true;
             this.tabardName.BackColor = System.Drawing.Color.Transparent;
-            this.tabardName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.tabardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tabardName.ForeColor = System.Drawing.Color.White;
             this.tabardName.Location = new System.Drawing.Point(86, 426);
             this.tabardName.Name = "tabardName";
             this.tabardName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tabardName.Size = new System.Drawing.Size(60, 16);
+            this.tabardName.Size = new System.Drawing.Size(55, 13);
             this.tabardName.TabIndex = 100;
             this.tabardName.TabStop = true;
             this.tabardName.Text = "linkLabel7";
@@ -250,12 +250,12 @@
             // 
             this.shirtName.AutoSize = true;
             this.shirtName.BackColor = System.Drawing.Color.Transparent;
-            this.shirtName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.shirtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.shirtName.ForeColor = System.Drawing.Color.White;
             this.shirtName.Location = new System.Drawing.Point(86, 364);
             this.shirtName.Name = "shirtName";
             this.shirtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.shirtName.Size = new System.Drawing.Size(60, 16);
+            this.shirtName.Size = new System.Drawing.Size(55, 13);
             this.shirtName.TabIndex = 99;
             this.shirtName.TabStop = true;
             this.shirtName.Text = "linkLabel6";
@@ -264,12 +264,12 @@
             // 
             this.chestName.AutoSize = true;
             this.chestName.BackColor = System.Drawing.Color.Transparent;
-            this.chestName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.chestName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.chestName.ForeColor = System.Drawing.Color.White;
             this.chestName.Location = new System.Drawing.Point(86, 302);
             this.chestName.Name = "chestName";
             this.chestName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.chestName.Size = new System.Drawing.Size(60, 16);
+            this.chestName.Size = new System.Drawing.Size(55, 13);
             this.chestName.TabIndex = 98;
             this.chestName.TabStop = true;
             this.chestName.Text = "linkLabel5";
@@ -278,12 +278,12 @@
             // 
             this.cloakName.AutoSize = true;
             this.cloakName.BackColor = System.Drawing.Color.Transparent;
-            this.cloakName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.cloakName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cloakName.ForeColor = System.Drawing.Color.White;
             this.cloakName.Location = new System.Drawing.Point(86, 240);
             this.cloakName.Name = "cloakName";
             this.cloakName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.cloakName.Size = new System.Drawing.Size(60, 16);
+            this.cloakName.Size = new System.Drawing.Size(55, 13);
             this.cloakName.TabIndex = 97;
             this.cloakName.TabStop = true;
             this.cloakName.Text = "linkLabel4";
@@ -292,12 +292,12 @@
             // 
             this.shoulderName.AutoSize = true;
             this.shoulderName.BackColor = System.Drawing.Color.Transparent;
-            this.shoulderName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.shoulderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.shoulderName.ForeColor = System.Drawing.Color.White;
             this.shoulderName.Location = new System.Drawing.Point(86, 178);
             this.shoulderName.Name = "shoulderName";
             this.shoulderName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.shoulderName.Size = new System.Drawing.Size(60, 16);
+            this.shoulderName.Size = new System.Drawing.Size(55, 13);
             this.shoulderName.TabIndex = 96;
             this.shoulderName.TabStop = true;
             this.shoulderName.Text = "linkLabel3";
@@ -306,12 +306,12 @@
             // 
             this.neckName.AutoSize = true;
             this.neckName.BackColor = System.Drawing.Color.Transparent;
-            this.neckName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.neckName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.neckName.ForeColor = System.Drawing.Color.White;
             this.neckName.Location = new System.Drawing.Point(86, 116);
             this.neckName.Name = "neckName";
             this.neckName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.neckName.Size = new System.Drawing.Size(60, 16);
+            this.neckName.Size = new System.Drawing.Size(55, 13);
             this.neckName.TabIndex = 95;
             this.neckName.TabStop = true;
             this.neckName.Text = "linkLabel2";
@@ -321,12 +321,12 @@
             this.headName.ActiveLinkColor = System.Drawing.Color.Red;
             this.headName.AutoSize = true;
             this.headName.BackColor = System.Drawing.Color.Transparent;
-            this.headName.Font = new System.Drawing.Font("Century Gothic", 8.25F);
+            this.headName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.headName.ForeColor = System.Drawing.Color.White;
             this.headName.Location = new System.Drawing.Point(86, 54);
             this.headName.Name = "headName";
             this.headName.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.headName.Size = new System.Drawing.Size(60, 16);
+            this.headName.Size = new System.Drawing.Size(55, 13);
             this.headName.TabIndex = 94;
             this.headName.TabStop = true;
             this.headName.Text = "linkLabel1";
@@ -493,15 +493,15 @@
             this.headSlot.TabIndex = 76;
             this.headSlot.TabStop = false;
             // 
-            // button2
+            // SearchCharacterButton
             // 
-            this.button2.Location = new System.Drawing.Point(833, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(155, 23);
-            this.button2.TabIndex = 75;
-            this.button2.Text = "Search Character";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.SearchCharacterButton.Location = new System.Drawing.Point(833, 10);
+            this.SearchCharacterButton.Name = "SearchCharacterButton";
+            this.SearchCharacterButton.Size = new System.Drawing.Size(155, 23);
+            this.SearchCharacterButton.TabIndex = 75;
+            this.SearchCharacterButton.Text = "Search Character";
+            this.SearchCharacterButton.UseVisualStyleBackColor = true;
+            this.SearchCharacterButton.Click += new System.EventHandler(this.SearchCharacterButton_Click);
             // 
             // regionList
             // 
@@ -539,30 +539,30 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(609, 10);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 21);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 71;
             this.label3.Text = "Region:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(372, 13);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 70;
             this.label2.Text = "Realm:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label1.Location = new System.Drawing.Point(-2, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(148, 21);
+            this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 69;
             this.label1.Text = "Character Name:";
             // 
@@ -613,7 +613,7 @@
             this.Controls.Add(this.shoulderSlot);
             this.Controls.Add(this.neckSlot);
             this.Controls.Add(this.headSlot);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.SearchCharacterButton);
             this.Controls.Add(this.regionList);
             this.Controls.Add(this.realmList);
             this.Controls.Add(this.characterName);
@@ -683,7 +683,7 @@
         private System.Windows.Forms.PictureBox shoulderSlot;
         private System.Windows.Forms.PictureBox neckSlot;
         private System.Windows.Forms.PictureBox headSlot;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SearchCharacterButton;
         private System.Windows.Forms.ComboBox regionList;
         private System.Windows.Forms.ComboBox realmList;
         private System.Windows.Forms.TextBox characterName;

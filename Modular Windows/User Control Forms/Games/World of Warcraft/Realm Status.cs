@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Web.Script.Serialization;
 using System.Net;
@@ -35,14 +30,14 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             dataGridView1.RowsDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
         }
 
-        public void getRealms(string region)
+        public void GetRealms(string region)
         {
             //Grabs the data from the below string and puts it into "realmJson".
             string realmAPIURL = region;
-            getInformation(realmAPIURL);
+            GetInformation(realmAPIURL);
         }
 
-        public void getInformation(string realmAPIURL)
+        public void GetInformation(string realmAPIURL)
         {
 
             var realmJson = new WebClient().DownloadString(realmAPIURL);
@@ -125,18 +120,18 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            getRealms("https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms("https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void Button2_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
-            getRealms("https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms("https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
         }
     }
 }

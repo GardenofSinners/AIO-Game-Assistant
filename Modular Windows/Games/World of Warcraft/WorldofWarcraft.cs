@@ -1,85 +1,135 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Net;
-using System.Text;
+﻿using AIO_Game_Assistant.Modular_Windows.Options;
+using System;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 {
     public partial class WorldofWarcraft : Form
     {
+        WoWHelper W = new WoWHelper();
+        WoWHelper _WoWHelper { get; }
 
         public WorldofWarcraft()
         {
             InitializeComponent();
-            character_Profile1.Hide();
-            auction_House1.Hide();
-            realm_Status1.Hide();
+            //RegionList.SelectedIndex = 0;
+
+            //Hide components
+            CharacterProfile.Hide();
+            GuildProfile.Hide();
+            AuctionHouse.Hide();
+            RealmStatus.Hide();
+
+            //Send to back
+            CharacterProfile.SendToBack();
+            GuildProfile.SendToBack();
+            AuctionHouse.SendToBack();
+            RealmStatus.SendToBack();
         }
 
-        private void close_Click(object sender, EventArgs e)
+        private void Close_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            this.Close();
+            Dispose();
+            Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void CharacterProfileButton_Click(object sender, EventArgs e)
         {
-            introduction.Visible = false;
-            if (character_Profile1.Visible == true)
+            Introduction.Visible = false;
+            if (CharacterProfile.Visible == true)
             {
-                character_Profile1.Hide();
-            } else
-            {
-                character_Profile1.Visible = true;
-            }        
+                CharacterProfile.Hide();
+                CharacterProfile.SendToBack();
+                GuildProfile.Hide();
+                GuildProfile.SendToBack();
+                AuctionHouse.Hide();
+                AuctionHouse.SendToBack();
+                RealmStatus.Hide();
+                RealmStatus.SendToBack();
+
+            } else {
+                AuctionHouse.Hide();
+                RealmStatus.Hide();
+                CharacterProfile.BringToFront();
+                CharacterProfile.Show();
+            }     
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void GuildProfileButton_Click(object sender, EventArgs e)
         {
-
-            introduction.Visible = false;
-
-            if (auction_House1.Visible == true)
+            Introduction.Visible = false;
+            if (GuildProfile.Visible == true)
             {
-                character_Profile1.Hide();
-                auction_House1.Hide();
+                CharacterProfile.Hide();
+                CharacterProfile.SendToBack();
+                GuildProfile.Hide();
+                GuildProfile.SendToBack();
+                AuctionHouse.Hide();
+                AuctionHouse.SendToBack();
+                RealmStatus.Hide();
+                RealmStatus.SendToBack();
+
             }
             else
             {
-                character_Profile1.Visible = false;
-                auction_House1.Visible = true;
+                AuctionHouse.Hide();
+                RealmStatus.Hide();
+                CharacterProfile.Hide();
+                GuildProfile.BringToFront();
+                GuildProfile.Show();
             }
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void AHButton_Click(object sender, EventArgs e)
         {
 
-            introduction.Visible = false;
+            Introduction.Visible = false;
 
-            if (realm_Status1.Visible == true)
+            if (AuctionHouse.Visible == true)
             {
-                character_Profile1.Hide();
-                auction_House1.Hide();
-                realm_Status1.Hide();
+                CharacterProfile.Hide();
+                CharacterProfile.SendToBack();
+                GuildProfile.Hide();
+                GuildProfile.SendToBack();
+                AuctionHouse.Hide();
+                AuctionHouse.SendToBack();
+                RealmStatus.Hide();
             }
             else
             {
-                character_Profile1.Visible = false;
-                auction_House1.Visible = false;
-                realm_Status1.Visible = true;
+                CharacterProfile.Hide();
+                RealmStatus.Hide();
+                AuctionHouse.BringToFront();
+                AuctionHouse.Show();
             }
         }
 
+        private void RealmSTatusButton_Click(object sender, EventArgs e)
+        {
 
+            Introduction.Visible = false;
 
-
+            if (RealmStatus.Visible == true)
+            {
+                CharacterProfile.Hide();
+                CharacterProfile.SendToBack();
+                GuildProfile.Hide();
+                GuildProfile.SendToBack();
+                AuctionHouse.Hide();
+                AuctionHouse.SendToBack();
+                RealmStatus.Hide();
+                RealmStatus.SendToBack();
+            }
+            else
+            {
+                CharacterProfile.Hide();
+                GuildProfile.Hide();
+                AuctionHouse.Hide();
+                RealmStatus.BringToFront();
+                RealmStatus.Show();
+            }
+        }
 
         //Allows the form to be dragged
         protected override void WndProc(ref Message m)
@@ -94,6 +144,19 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
             }
 
             base.WndProc(ref m);
+        }
+
+        private void RegionList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                //Task.Run(_WoWHelper.GetRealmList);
+                Task.Run(W.GetRealmList);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

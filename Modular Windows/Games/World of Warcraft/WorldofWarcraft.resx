@@ -117,7 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="introduction.Text" xml:space="preserve">
+  <data name="Introduction.Text" xml:space="preserve">
     <value>Hello and welcome to the WoW section of the AIO Game Assistant application!
 This application is an game assistant which will allow you do many things such as browse auction house sales, 
 character profiles etc, there are going to be many more tools integrated into the project however at this current 
@@ -133,7 +133,7 @@ time is the "Character Profile")
 </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Logo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAFGCAYAAACSQvsGAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
         /QecHVd994/f3dt733t37/bee++9V22v2qaVVr1Z1ZJs2ZIlS7ItW922LLlbtuXeMWAMPAQCAUICppeQ
@@ -9953,7 +9953,7 @@ time is the "Character Profile")
         +UkFyv8fQPSLZOU5RXwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="logo.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="Logo.InitialImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAyAAAAFGCAYAAACSQvsGAAAABGdBTUEAALGPC/xhBQAA/8dJREFUeF7s
         /QecHVd994/f3dt733t37/bee++9V22v2qaVVr1Z1ZJs2ZIlS7ItW922LLlbtuXeMWAMPAQCAUICppeQ

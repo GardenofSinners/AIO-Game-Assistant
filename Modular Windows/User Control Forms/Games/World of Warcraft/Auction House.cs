@@ -24,43 +24,42 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         {
             InitializeComponent();
             //Sets the region dropdown to US by default since it's the first in the queue.
-            regionList.SelectedIndex = 0;
-            getRealmList();
+            RegionList.SelectedIndex = 0;
+            GetRealmList();
         }
 
         #region Get the Realmlist
-        public void getRealmList()
+        public void GetRealmList()
         {
-
-            if (regionList.SelectedIndex == 0)
+            if (RegionList.SelectedIndex == 0)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                regionMethod(realmAPIURL);
+                RegionMethod(realmAPIURL);
             }
-            else if (regionList.SelectedIndex == 1)
+            else if (RegionList.SelectedIndex == 1)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                regionMethod(realmAPIURL);
+                RegionMethod(realmAPIURL);
             }
-            else if (regionList.SelectedIndex == 2)
+            else if (RegionList.SelectedIndex == 2)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                regionMethod(realmAPIURL);
+                RegionMethod(realmAPIURL);
             }
-            else if (regionList.SelectedIndex == 3)
+            else if (RegionList.SelectedIndex == 3)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                regionMethod(realmAPIURL);
+                RegionMethod(realmAPIURL);
             }
         }
         #endregion
 
         #region Region method to prevent duplication of code for getting the realmlists.
-        public void regionMethod(string api)
+        public void RegionMethod(string api)
         {
 
             string realmAPIURL = api;
@@ -73,40 +72,40 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             //Runs through all the values and gets the value of "Name" for each value.
             for (int i = 0; i < dict["realms"].Count; i++)
             {
-                realmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
+                RealmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
             }
 
         }
         #endregion
 
         #region On RealmList SelectedIndexChange
-        private void regionList_SelectedIndexChanged(object sender, EventArgs e)
+        private void RegionList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (regionList.SelectedIndex == 0)
+            if (RegionList.SelectedIndex == 0)
             {
-                getRealmList();
+                GetRealmList();
             }
-            else if (regionList.SelectedIndex == 1)
+            else if (RegionList.SelectedIndex == 1)
             {
-                getRealmList();
+                GetRealmList();
             }
-            else if (regionList.SelectedIndex == 2)
+            else if (RegionList.SelectedIndex == 2)
             {
-                getRealmList();
+                GetRealmList();
             }
-            else if (regionList.SelectedIndex == 3)
+            else if (RegionList.SelectedIndex == 3)
             {
-                getRealmList();
+                GetRealmList();
             }
         }
         #endregion
 
 
-        public void getAuctionData()
+        public void GetAuctionData()
         {
             //string charactername = characterName.Text;
-            string realm = realmList.SelectedItem.ToString();
-            string region = regionList.SelectedItem.ToString();
+            string realm = RealmList.SelectedItem.ToString();
+            string region = RegionList.SelectedItem.ToString();
 
             DialogResult result = MessageBox.Show("This may take some time to download, the program will be unresponsive in the mean time. " +
                 "Are you sure you want to continue?", "Confirmation", MessageBoxButtons.YesNo);
@@ -116,7 +115,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                 
                 jss.MaxJsonLength = int.MaxValue;
 
-                string auctionAPI = "https://" + region + ".api.battle.net/wow/auction/data/" + realm + "?" + "?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                string auctionAPI = $"https://{region}.api.battle.net/wow/auction/data/{realm}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
                 var realmAuctionJson = new WebClient().DownloadString(auctionAPI);
                 var dict = jss.Deserialize<Dictionary<string, dynamic>>(realmAuctionJson);
 
@@ -156,14 +155,14 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         //    return result;
         //}
 
-        private void button2_Click(object sender, EventArgs e)
+        private void SearchAHButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(realmList.Text))
+            if (string.IsNullOrWhiteSpace(RealmList.Text))
             {
                 MessageBox.Show("Realm is not selected! Go back and pick one!", "Confirmation", MessageBoxButtons.OK);
             } else
             {
-                getAuctionData();
+                GetAuctionData();
             }
             
         }
@@ -171,34 +170,34 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
         public class Realm
         {
-            public string name { get; set; }
-            public string slug { get; set; }
+            public string Name { get; set; }
+            public string Slug { get; set; }
         }
 
         public class Auction
         {
-            public int auc { get; set; }
-            public int item { get; set; }
-            public string owner { get; set; }
-            public string ownerRealm { get; set; }
-            public int bid { get; set; }
-            public int buyout { get; set; }
-            public int quantity { get; set; }
-            public string timeLeft { get; set; }
-            public int rand { get; set; }
-            public int seed { get; set; }
-            public int context { get; set; }
+            public int Auc { get; set; }
+            public int Item { get; set; }
+            public string Owner { get; set; }
+            public string OwnerRealm { get; set; }
+            public int Bid { get; set; }
+            public int Buyout { get; set; }
+            public int Quantity { get; set; }
+            public string TimeLeft { get; set; }
+            public int Rand { get; set; }
+            public int Seed { get; set; }
+            public int Context { get; set; }
         }
 
         public class Auctions
         {
-            public List<Auction> auctions { get; set; }
+            public List<Auction> AuctionsList { get; set; }
         }
 
         public class RootObject
         {
-            public Realm realm { get; set; }
-            public Auctions auctions { get; set; }
+            public Realm Realm { get; set; }
+            public Auctions Auctions { get; set; }
         }
     }
 }

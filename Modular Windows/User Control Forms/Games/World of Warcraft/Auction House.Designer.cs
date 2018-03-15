@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button2 = new System.Windows.Forms.Button();
-            this.regionList = new System.Windows.Forms.ComboBox();
-            this.realmList = new System.Windows.Forms.ComboBox();
+            this.SearchAHButton = new System.Windows.Forms.Button();
+            this.RegionList = new System.Windows.Forms.ComboBox();
+            this.RealmList = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -43,59 +43,59 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // button2
+            // SearchAHButton
             // 
-            this.button2.Location = new System.Drawing.Point(729, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(262, 40);
-            this.button2.TabIndex = 82;
-            this.button2.Text = "Search Auction House";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.SearchAHButton.Location = new System.Drawing.Point(729, 3);
+            this.SearchAHButton.Name = "SearchAHButton";
+            this.SearchAHButton.Size = new System.Drawing.Size(262, 40);
+            this.SearchAHButton.TabIndex = 82;
+            this.SearchAHButton.Text = "Search Auction House";
+            this.SearchAHButton.UseVisualStyleBackColor = true;
+            this.SearchAHButton.Click += new System.EventHandler(this.SearchAHButton_Click);
             // 
-            // regionList
+            // RegionList
             // 
-            this.regionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.regionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.regionList.FormattingEnabled = true;
-            this.regionList.Items.AddRange(new object[] {
+            this.RegionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RegionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RegionList.FormattingEnabled = true;
+            this.RegionList.Items.AddRange(new object[] {
             "US",
             "EU",
             "KR",
             "TW"});
-            this.regionList.Location = new System.Drawing.Point(581, 19);
-            this.regionList.Name = "regionList";
-            this.regionList.Size = new System.Drawing.Size(143, 21);
-            this.regionList.TabIndex = 81;
+            this.RegionList.Location = new System.Drawing.Point(581, 19);
+            this.RegionList.Name = "RegionList";
+            this.RegionList.Size = new System.Drawing.Size(143, 21);
+            this.RegionList.TabIndex = 81;
             // 
-            // realmList
+            // RealmList
             // 
-            this.realmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.realmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.realmList.FormattingEnabled = true;
-            this.realmList.Location = new System.Drawing.Point(284, 19);
-            this.realmList.Name = "realmList";
-            this.realmList.Size = new System.Drawing.Size(223, 21);
-            this.realmList.Sorted = true;
-            this.realmList.TabIndex = 80;
+            this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RealmList.FormattingEnabled = true;
+            this.RealmList.Location = new System.Drawing.Point(284, 19);
+            this.RealmList.Name = "RealmList";
+            this.RealmList.Size = new System.Drawing.Size(223, 21);
+            this.RealmList.Sorted = true;
+            this.RealmList.TabIndex = 80;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.Location = new System.Drawing.Point(513, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 21);
+            this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 78;
             this.label3.Text = "Region:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.Location = new System.Drawing.Point(222, 19);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 77;
             this.label2.Text = "Realm:";
             // 
@@ -170,9 +170,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.regionList);
-            this.Controls.Add(this.realmList);
+            this.Controls.Add(this.SearchAHButton);
+            this.Controls.Add(this.RegionList);
+            this.Controls.Add(this.RealmList);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "Auction_House";
@@ -185,9 +185,9 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.ComboBox regionList;
-        private System.Windows.Forms.ComboBox realmList;
+        private System.Windows.Forms.Button SearchAHButton;
+        private System.Windows.Forms.ComboBox RegionList;
+        private System.Windows.Forms.ComboBox RealmList;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
