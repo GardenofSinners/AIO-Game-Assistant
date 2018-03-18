@@ -4,11 +4,16 @@ using System.Windows.Forms;
 using System.Net;
 using System.Web.Script.Serialization;
 using System.Threading.Tasks;
+using AIO_Game_Assistant.Modular_Windows.Options;
+using System.Linq;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
     public partial class Character_Profile : UserControl
     {
+
+        WoWHelper W = new WoWHelper();
+        WoWHelper _WoWHelper { get; }
 
         private static Character_Profile _instance;
 
@@ -20,8 +25,6 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
             }
         }
-
-        public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
 
         public Character_Profile()
         {
@@ -37,49 +40,37 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
             if (regionList.SelectedIndex == 0)
             {
-                //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                //RegionMethod(realmAPIURL);
+                string[] realms = new string[W.RegionMethod(realmAPIURL).Count()];
+                ComboBox.CheckForIllegalCrossThreadCalls = false;
+                realms = W.RegionMethod(realmAPIURL);
+                
+                for (int y = 0; y < realms.Length; y++)
+                {
+                    realmList.Items.Add(realms[y]);
+                }
             }
             else if (regionList.SelectedIndex == 1)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                //RegionMethod(realmAPIURL);
+                W.RegionMethod(realmAPIURL);
             }
             else if (regionList.SelectedIndex == 2)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                //RegionMethod(realmAPIURL);
+                W.RegionMethod(realmAPIURL);
             }
             else if (regionList.SelectedIndex == 3)
             {
                 //Grabs the data from the below string and puts it into "realmJson".
                 string realmAPIURL = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                //RegionMethod(realmAPIURL);
+                W.RegionMethod(realmAPIURL);
+                W.GetRealmList();
             }
 
             return Task.CompletedTask;
-        }
-        #endregion
-
-        #region Region method to prevent duplication of code for getting the realmlists.
-        public void RegionMethod(string api)
-        {
-
-            string realmAPIURL = api;
-            var realmJson = new WebClient().DownloadString(realmAPIURL);
-
-            //A dictionary where all values for the deserialized JSON is stored
-            var dict = jss.Deserialize<Dictionary<string, dynamic>>(realmJson);
-
-            //Runs through all the values and gets the value of "Name" for each value.
-            for (int i = 0; i < dict["realms"].Count; i++)
-            {
-                //realmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
-            }
-
         }
         #endregion
 
@@ -119,7 +110,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                 string characterJson = new WebClient().DownloadString(characterAPI);
 
                 //A dictionary where all values for the deserialized JSON is stored
-                var dict = jss.Deserialize<Dictionary<string, dynamic>>(characterJson);
+                var dict = W.jss.Deserialize<Dictionary<string, dynamic>>(characterJson);
 
                 string thumbnailUrl = dict["thumbnail"];
 
@@ -153,7 +144,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             var gearJson = new WebClient().DownloadString(gearAPI);
 
             //A dictionary where all values for the deserialized JSON is stored
-            var dict = jss.Deserialize<Dictionary<string, dynamic>>(gearJson);
+            var dict = W.jss.Deserialize<Dictionary<string, dynamic>>(gearJson);
 
             WebClient webClient = new WebClient();
 
