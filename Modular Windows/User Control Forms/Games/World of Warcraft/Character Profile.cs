@@ -6,14 +6,12 @@ using System.Web.Script.Serialization;
 using System.Threading.Tasks;
 using AIO_Game_Assistant.Modular_Windows.Options;
 using System.Linq;
+using AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
     public partial class Character_Profile : UserControl
     {
-
-        WoWHelper W = new WoWHelper();
-        WoWHelper _WoWHelper { get; }
 
         private static Character_Profile _instance;
 
@@ -30,93 +28,38 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         {
             InitializeComponent();
             //Sets the region dropdown to US by default since it's the first in the queue.
-            regionList.SelectedIndex = 0;
-            Task.Run(GetRealmList);
         }
 
-        #region Get the Realmlist
-        public Task GetRealmList()
+        private string realm;
+        private string region;
+        public void Init(string @Region, string Realm)
         {
+            realm = Realm;
+            region = @Region;
 
-            if (regionList.SelectedIndex == 0)
-            {
-                string realmAPIURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                string[] realms = new string[W.RegionMethod(realmAPIURL).Count()];
-                ComboBox.CheckForIllegalCrossThreadCalls = false;
-                realms = W.RegionMethod(realmAPIURL);
-                
-                for (int y = 0; y < realms.Length; y++)
-                {
-                    realmList.Items.Add(realms[y]);
-                }
-            }
-            else if (regionList.SelectedIndex == 1)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                W.RegionMethod(realmAPIURL);
-            }
-            else if (regionList.SelectedIndex == 2)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                W.RegionMethod(realmAPIURL);
-            }
-            else if (regionList.SelectedIndex == 3)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                W.RegionMethod(realmAPIURL);
-                W.GetRealmList();
-            }
-
-            return Task.CompletedTask;
+            Console.WriteLine($"Region {realm} \nRealm: {realm}");
         }
-        #endregion
-
-        #region On RealmList SelectedIndexChange
-        private void RegionList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (regionList.SelectedIndex == 0)
-            {
-                GetRealmList();
-            }
-            else if (regionList.SelectedIndex == 1)
-            {
-                GetRealmList();
-            }
-            else if (regionList.SelectedIndex == 2)
-            {
-                GetRealmList();
-            }
-            else if (regionList.SelectedIndex == 3)
-            {
-                GetRealmList();
-            }
-        }
-        #endregion
 
         #region Get User Gear, Appearance, Race etc.
+
         private void SearchCharacterButton_Click(object sender, EventArgs e)
         {
             string charactername = characterName.Text;
-            string realm = realmList.SelectedItem.ToString();
-            string region = regionList.SelectedItem.ToString();
 
-            string characterAPI = "https://" + region + ".api.battle.net/wow/character/" + realm + "/" + charactername + "?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-            
+            Console.WriteLine($"Region {realm} \nRealm: {realm}");
+
+            string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+
             try
             {
                 string characterJson = new WebClient().DownloadString(characterAPI);
 
                 //A dictionary where all values for the deserialized JSON is stored
-                var dict = W.jss.Deserialize<Dictionary<string, dynamic>>(characterJson);
+                var dict = WoWHelper.Instance.jss.Deserialize<Dictionary<string, dynamic>>(characterJson);
 
                 string thumbnailUrl = dict["thumbnail"];
-
                 thumbnailUrl = thumbnailUrl.Substring(0, thumbnailUrl.Length - 10); //prints out {id}/{generatedImageID}-
-
-                thumbnailUrl = "http://render-" + region + ".worldofwarcraft.com/character/" + thumbnailUrl + "profilemain.jpg";
+                thumbnailUrl = $"http://render-{region}.worldofwarcraft.com/character/{thumbnailUrl}profilemain.jpg";
 
                 pictureBox1.Load(thumbnailUrl);
                 UserAppearanceandGear();
@@ -137,14 +80,12 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
             //icons are displayed in a 56x56 format
             string charactername = characterName.Text;
-            string realm = realmList.SelectedItem.ToString();
-            string region = regionList.SelectedItem.ToString();
             string gearAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?fields=items&locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
 
             var gearJson = new WebClient().DownloadString(gearAPI);
 
             //A dictionary where all values for the deserialized JSON is stored
-            var dict = W.jss.Deserialize<Dictionary<string, dynamic>>(gearJson);
+            var dict = WoWHelper.Instance.jss.Deserialize<Dictionary<string, dynamic>>(gearJson);
 
             WebClient webClient = new WebClient();
 

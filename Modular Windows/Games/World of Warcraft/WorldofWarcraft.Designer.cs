@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WorldofWarcraft));
-            this.ChracterProfileButton = new System.Windows.Forms.Button();
+            this.CharacterProfileButton = new System.Windows.Forms.Button();
             this.CloseWoW = new System.Windows.Forms.Label();
             this.Introduction = new System.Windows.Forms.Label();
             this.Panel1 = new System.Windows.Forms.Panel();
@@ -41,21 +41,25 @@
             this.Panel2 = new System.Windows.Forms.Panel();
             this.Logo = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.RealmList = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.Panel1.SuspendLayout();
             this.Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).BeginInit();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // ChracterProfileButton
+            // CharacterProfileButton
             // 
-            this.ChracterProfileButton.Location = new System.Drawing.Point(1, 3);
-            this.ChracterProfileButton.Name = "ChracterProfileButton";
-            this.ChracterProfileButton.Size = new System.Drawing.Size(113, 48);
-            this.ChracterProfileButton.TabIndex = 0;
-            this.ChracterProfileButton.Text = "Character Profile";
-            this.ChracterProfileButton.UseVisualStyleBackColor = true;
-            this.ChracterProfileButton.Click += new System.EventHandler(this.CharacterProfileButton_Click);
+            this.CharacterProfileButton.Enabled = false;
+            this.CharacterProfileButton.Location = new System.Drawing.Point(1, 3);
+            this.CharacterProfileButton.Name = "CharacterProfileButton";
+            this.CharacterProfileButton.Size = new System.Drawing.Size(113, 48);
+            this.CharacterProfileButton.TabIndex = 0;
+            this.CharacterProfileButton.Text = "Character Profile";
+            this.CharacterProfileButton.UseVisualStyleBackColor = true;
+            this.CharacterProfileButton.Click += new System.EventHandler(this.CharacterProfileButton_Click);
             // 
             // CloseWoW
             // 
@@ -80,12 +84,15 @@
             // 
             // Panel1
             // 
+            this.Panel1.Controls.Add(this.label2);
+            this.Panel1.Controls.Add(this.label1);
+            this.Panel1.Controls.Add(this.RealmList);
             this.Panel1.Controls.Add(this.TokensButton);
             this.Panel1.Controls.Add(this.RegionList);
             this.Panel1.Controls.Add(this.GuildProfileButton);
             this.Panel1.Controls.Add(this.RealmStatusButton);
             this.Panel1.Controls.Add(this.AHButton);
-            this.Panel1.Controls.Add(this.ChracterProfileButton);
+            this.Panel1.Controls.Add(this.CharacterProfileButton);
             this.Panel1.Location = new System.Drawing.Point(-1, 87);
             this.Panel1.Name = "Panel1";
             this.Panel1.Size = new System.Drawing.Size(115, 529);
@@ -93,6 +100,7 @@
             // 
             // TokensButton
             // 
+            this.TokensButton.Enabled = false;
             this.TokensButton.Location = new System.Drawing.Point(2, 223);
             this.TokensButton.Name = "TokensButton";
             this.TokensButton.Size = new System.Drawing.Size(113, 48);
@@ -111,7 +119,7 @@
             "EU",
             "KR",
             "TW"});
-            this.RegionList.Location = new System.Drawing.Point(0, 494);
+            this.RegionList.Location = new System.Drawing.Point(1, 448);
             this.RegionList.Name = "RegionList";
             this.RegionList.Size = new System.Drawing.Size(112, 21);
             this.RegionList.TabIndex = 75;
@@ -119,6 +127,7 @@
             // 
             // GuildProfileButton
             // 
+            this.GuildProfileButton.Enabled = false;
             this.GuildProfileButton.Location = new System.Drawing.Point(1, 58);
             this.GuildProfileButton.Name = "GuildProfileButton";
             this.GuildProfileButton.Size = new System.Drawing.Size(113, 48);
@@ -129,6 +138,7 @@
             // 
             // RealmStatusButton
             // 
+            this.RealmStatusButton.Enabled = false;
             this.RealmStatusButton.Location = new System.Drawing.Point(1, 113);
             this.RealmStatusButton.Name = "RealmStatusButton";
             this.RealmStatusButton.Size = new System.Drawing.Size(113, 48);
@@ -139,6 +149,7 @@
             // 
             // AHButton
             // 
+            this.AHButton.Enabled = false;
             this.AHButton.Location = new System.Drawing.Point(1, 168);
             this.AHButton.Name = "AHButton";
             this.AHButton.Size = new System.Drawing.Size(113, 48);
@@ -169,10 +180,42 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.Introduction);
-            this.panel3.Location = new System.Drawing.Point(117, 48);
+            this.panel3.Location = new System.Drawing.Point(117, -1);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(986, 568);
+            this.panel3.Size = new System.Drawing.Size(986, 617);
             this.panel3.TabIndex = 7;
+            // 
+            // RealmList
+            // 
+            this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RealmList.FormattingEnabled = true;
+            this.RealmList.Location = new System.Drawing.Point(0, 490);
+            this.RealmList.Name = "RealmList";
+            this.RealmList.Size = new System.Drawing.Size(114, 21);
+            this.RealmList.Sorted = true;
+            this.RealmList.TabIndex = 74;
+            this.RealmList.SelectedIndexChanged += new System.EventHandler(this.RealmList_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century", 8.25F);
+            this.label1.Location = new System.Drawing.Point(4, 430);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 77;
+            this.label1.Text = "Region:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 8.25F);
+            this.label2.Location = new System.Drawing.Point(4, 472);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(43, 15);
+            this.label2.TabIndex = 78;
+            this.label2.Text = "Realm:";
             // 
             // WorldofWarcraft
             // 
@@ -190,6 +233,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "World of Warcraft AIO Assistant";
             this.Panel1.ResumeLayout(false);
+            this.Panel1.PerformLayout();
             this.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Logo)).EndInit();
             this.panel3.ResumeLayout(false);
@@ -199,8 +243,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button ChracterProfileButton;
         private System.Windows.Forms.Label CloseWoW;
         private System.Windows.Forms.Label Introduction;
         private System.Windows.Forms.Panel Panel1;
@@ -212,5 +254,9 @@
         public System.Windows.Forms.ComboBox RegionList;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button TokensButton;
+        public System.Windows.Forms.ComboBox RealmList;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button CharacterProfileButton;
+        private System.Windows.Forms.Label label2;
     }
 }

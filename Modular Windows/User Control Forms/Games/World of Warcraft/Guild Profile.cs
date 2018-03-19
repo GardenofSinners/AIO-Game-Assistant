@@ -43,7 +43,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                 string region = GuildRegionList.Text;
                 //string GuildUri = new WebClient().DownloadString($"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=achievements%2Cchallenge&locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
 
-                _WoWHelper.GetRealmList();
+                //_WoWHelper.GetRealmList();
                 richTextBox1.Text = _WoWHelper.RealmURI;
             }
             catch(WebException)

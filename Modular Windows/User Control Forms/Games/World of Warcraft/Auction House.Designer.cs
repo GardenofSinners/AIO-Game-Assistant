@@ -40,12 +40,13 @@
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // SearchAHButton
             // 
-            this.SearchAHButton.Location = new System.Drawing.Point(729, 3);
+            this.SearchAHButton.Location = new System.Drawing.Point(727, 26);
             this.SearchAHButton.Name = "SearchAHButton";
             this.SearchAHButton.Size = new System.Drawing.Size(262, 40);
             this.SearchAHButton.TabIndex = 82;
@@ -63,7 +64,7 @@
             "EU",
             "KR",
             "TW"});
-            this.RegionList.Location = new System.Drawing.Point(581, 19);
+            this.RegionList.Location = new System.Drawing.Point(579, 42);
             this.RegionList.Name = "RegionList";
             this.RegionList.Size = new System.Drawing.Size(143, 21);
             this.RegionList.TabIndex = 81;
@@ -73,7 +74,7 @@
             this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.RealmList.FormattingEnabled = true;
-            this.RealmList.Location = new System.Drawing.Point(284, 19);
+            this.RealmList.Location = new System.Drawing.Point(282, 42);
             this.RealmList.Name = "RealmList";
             this.RealmList.Size = new System.Drawing.Size(223, 21);
             this.RealmList.Sorted = true;
@@ -83,7 +84,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(513, 19);
+            this.label3.Location = new System.Drawing.Point(511, 42);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 20);
             this.label3.TabIndex = 78;
@@ -93,7 +94,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(222, 19);
+            this.label2.Location = new System.Drawing.Point(220, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 77;
@@ -111,7 +112,7 @@
             this.Column4,
             this.Column5,
             this.Column6});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(1, 116);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(988, 500);
@@ -169,6 +170,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchAHButton);
             this.Controls.Add(this.RegionList);
@@ -176,7 +178,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Name = "Auction_House";
-            this.Size = new System.Drawing.Size(994, 596);
+            this.Size = new System.Drawing.Size(986, 617);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,5 +199,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -1,17 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.Web.Script.Serialization;
-using System.IO;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
@@ -74,7 +65,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         {
 
             string realmAPIURL = api;
-            
+
             var realmJson = new WebClient().DownloadString(realmAPIURL);
 
             //A dictionary where all values for the deserialized JSON is stored
@@ -123,7 +114,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
             if (result == DialogResult.Yes)
             {
-                
+
                 jss.MaxJsonLength = int.MaxValue;
 
                 string auctionAPI = $"https://{region}.api.battle.net/wow/auction/data/{realm}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
@@ -142,7 +133,7 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                     long buyout = dictionary["auctions"][i]["buyout"];
                     int quantity = dictionary["auctions"][i]["quantity"];
                     string timeLeft = dictionary["auctions"][i]["timeLeft"];
-                    
+
                     this.dataGridView1.Rows.Add(itemID, owner, bid, buyout, quantity, timeLeft);
                 }
             }
@@ -150,65 +141,20 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             {
                 MessageBox.Show("Operation Canceled. ", "Confirmation", MessageBoxButtons.OK);
             }
-            
-        }
 
-        //public int[] WoWMoney(int m)
-        //{
-        //    int[] result = new int[3];
-        //    int copper = m % 100;
-        //    m = (m - copper) / 100;
-        //    int silver = m % 100;
-        //    int gold = (m - silver) / 100;
-        //    result[0] = copper;
-        //    result[1] = silver;
-        //    result[2] = gold;
-        //    return result;
-        //}
+        }
 
         private void SearchAHButton_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(RealmList.Text))
             {
                 MessageBox.Show("Realm is not selected! Go back and pick one!", "Confirmation", MessageBoxButtons.OK);
-            } else
+            }
+            else
             {
                 GetAuctionData();
             }
-            
-        }
 
-
-        public class Realm
-        {
-            public string Name { get; set; }
-            public string Slug { get; set; }
-        }
-
-        public class Auction
-        {
-            public int Auc { get; set; }
-            public int Item { get; set; }
-            public string Owner { get; set; }
-            public string OwnerRealm { get; set; }
-            public int Bid { get; set; }
-            public int Buyout { get; set; }
-            public int Quantity { get; set; }
-            public string TimeLeft { get; set; }
-            public int Rand { get; set; }
-            public int Seed { get; set; }
-            public int Context { get; set; }
-        }
-
-        public class Auctions
-        {
-            public List<Auction> AuctionsList { get; set; }
-        }
-
-        public class RootObject
-        {
-            public Realm Realm { get; set; }
-            public Auctions Auctions { get; set; }
         }
     }
 }

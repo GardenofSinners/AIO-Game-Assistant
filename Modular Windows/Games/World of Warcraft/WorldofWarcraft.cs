@@ -1,20 +1,30 @@
 ﻿using AIO_Game_Assistant.Modular_Windows.Options;
 using AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 {
     public partial class WorldofWarcraft : Form
-    {
-        WoWHelper W = new WoWHelper();
-        WoWHelper _WoWHelper { get; }
+    { 
+        public static WorldofWarcraft _instance;
+
+        public static WorldofWarcraft Instance {
+            get {
+                if (_instance == null)
+                    _instance = new WorldofWarcraft();
+                return _instance;
+
+            }
+        }
 
         public WorldofWarcraft()
         {
             InitializeComponent();
-            //RegionList.SelectedIndex = 0;
+            ComboBox.CheckForIllegalCrossThreadCalls = false;
+            //When realm and region are selected enable the buttons.
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -25,7 +35,7 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 
         private void CharacterProfileButton_Click(object sender, EventArgs e)
         {
-            Introduction.Visible = false;
+            Introduction.Hide();
             if (!panel3.Controls.Contains(Character_Profile.Instance))
             {
                 panel3.Controls.Add(Character_Profile.Instance);
@@ -37,7 +47,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
                 panel3.Controls.Remove(Character_Profile.Instance);
             }
         }
-
         private void GuildProfileButton_Click(object sender, EventArgs e)
         {
             Introduction.Visible = false;
@@ -116,17 +125,49 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
             base.WndProc(ref m);
         }
 
+        public void GetRealmList()
+        {
+            RealmList.Items.Clear();
+            WoWHelper.Instance.GetRealmList(RegionList.SelectedIndex);
+            string RealmURI = WoWHelper.Instance.RealmURI;
+
+            string[] realms = new string[WoWHelper.Instance.RegionMethod(RealmURI).Count()];
+            ComboBox.CheckForIllegalCrossThreadCalls = false;
+            realms = WoWHelper.Instance.RegionMethod(RealmURI);
+
+            for (int y = 0; y < realms.Length; y++)
+            {
+                RealmList.Items.Add(realms[y]);
+            }
+
+        }
+
         private void RegionList_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
             {
-                //Task.Run(_WoWHelper.GetRealmList);
-                Task.Run(W.GetRealmList);
+                //Character_Profile.Instance.RealmList.Items.Clear();
+
+                WoWHelper.Instance.GetRealmList(RegionList.SelectedIndex);
+                Console.WriteLine(WoWHelper.Instance.RealmURI);
+                GetRealmList();
             }
             catch(Exception ex)
             {
                 Console.WriteLine(ex);
             }
+        }
+
+        private void RealmList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Character_Profile.Instance.Init(RegionList.SelectedItem.ToString(), RealmList.SelectedItem.ToString());
+
+            if (RealmList.SelectedItem != null)
+            CharacterProfileButton.Enabled = true;
+            GuildProfileButton.Enabled = true;
+            RealmStatusButton.Enabled = true;
+            AHButton.Enabled = true;
+            TokensButton.Enabled = true;
         }
     }
 }

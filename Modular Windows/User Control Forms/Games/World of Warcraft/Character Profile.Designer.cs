@@ -63,8 +63,7 @@
             this.neckSlot = new System.Windows.Forms.PictureBox();
             this.headSlot = new System.Windows.Forms.PictureBox();
             this.SearchCharacterButton = new System.Windows.Forms.Button();
-            this.regionList = new System.Windows.Forms.ComboBox();
-            this.realmList = new System.Windows.Forms.ComboBox();
+            this.RealmList = new System.Windows.Forms.ComboBox();
             this.characterName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -503,31 +502,16 @@
             this.SearchCharacterButton.UseVisualStyleBackColor = true;
             this.SearchCharacterButton.Click += new System.EventHandler(this.SearchCharacterButton_Click);
             // 
-            // regionList
+            // RealmList
             // 
-            this.regionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.regionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.regionList.FormattingEnabled = true;
-            this.regionList.Items.AddRange(new object[] {
-            "US",
-            "EU",
-            "KR",
-            "TW"});
-            this.regionList.Location = new System.Drawing.Point(683, 12);
-            this.regionList.Name = "regionList";
-            this.regionList.Size = new System.Drawing.Size(143, 21);
-            this.regionList.TabIndex = 74;
-            // 
-            // realmList
-            // 
-            this.realmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.realmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.realmList.FormattingEnabled = true;
-            this.realmList.Location = new System.Drawing.Point(441, 11);
-            this.realmList.Name = "realmList";
-            this.realmList.Size = new System.Drawing.Size(162, 21);
-            this.realmList.Sorted = true;
-            this.realmList.TabIndex = 73;
+            this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.RealmList.FormattingEnabled = true;
+            this.RealmList.Location = new System.Drawing.Point(441, 11);
+            this.RealmList.Name = "RealmList";
+            this.RealmList.Size = new System.Drawing.Size(162, 21);
+            this.RealmList.Sorted = true;
+            this.RealmList.TabIndex = 73;
             // 
             // characterName
             // 
@@ -614,8 +598,7 @@
             this.Controls.Add(this.neckSlot);
             this.Controls.Add(this.headSlot);
             this.Controls.Add(this.SearchCharacterButton);
-            this.Controls.Add(this.regionList);
-            this.Controls.Add(this.realmList);
+            this.Controls.Add(this.RealmList);
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -684,12 +667,11 @@
         private System.Windows.Forms.PictureBox neckSlot;
         private System.Windows.Forms.PictureBox headSlot;
         private System.Windows.Forms.Button SearchCharacterButton;
-        private System.Windows.Forms.ComboBox regionList;
-        private System.Windows.Forms.ComboBox realmList;
         private System.Windows.Forms.TextBox characterName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.ComboBox RealmList;
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft;
+using AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,45 +7,54 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
+using System.Windows.Controls;
 
 namespace AIO_Game_Assistant.Modular_Windows.Options
 {
     public class WoWHelper
     {
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
-        WorldofWarcraft WoW { get; }
-        public string RealmURI { get; private set; } = "test";
+        public string RealmURI;
+
+        public static WoWHelper _instance;
+
+        public static WoWHelper Instance {
+            get {
+                if (_instance == null)
+                    _instance = new WoWHelper();
+                return _instance;
+
+            }
+        }
+
 
         #region Get the Realmlist
-        public Task GetRealmList()
+        public void GetRealmList(int index)
         {
+
+            //Console.WriteLine(WorldofWarcraft.Instance.RegionList.SelectedItem);
             
-            if (WoW.RegionList.SelectedIndex == 0)
+            if (index == 0)
             {
                 RealmURI = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(RealmURI);
             }
-            else if (WoW.RegionList.SelectedIndex == 1)
+            else if (index == 1)
             {
                 RealmURI = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(RealmURI);
             }
-            else if (WoW.RegionList.SelectedIndex == 2)
+            else if (index == 2)
             {
                 RealmURI = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(RealmURI);
             }
-            else if (WoW.RegionList.SelectedIndex == 3)
+            else if (index == 3)
             {
                 RealmURI = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(RealmURI);
             }
             Console.WriteLine(RealmURI);
-            return Task.CompletedTask;
         }
         #endregion
 
-        #region Region method to prevent duplication of code for getting the realmlists.
+        #region Region method to prevent duplication of code for getting the realmRelists.
         public string[] RegionMethod(string api)
         {
 
