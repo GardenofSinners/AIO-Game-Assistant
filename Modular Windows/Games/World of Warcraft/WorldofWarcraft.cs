@@ -2,7 +2,6 @@
 using AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft;
 using System;
 using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
@@ -22,9 +21,8 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
 
         public WorldofWarcraft()
         {
+            CheckForIllegalCrossThreadCalls = false;
             InitializeComponent();
-            ComboBox.CheckForIllegalCrossThreadCalls = false;
-            //When realm and region are selected enable the buttons.
         }
 
         private void Close_Click(object sender, EventArgs e)
@@ -110,21 +108,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
             }
         }
 
-        //Allows the form to be dragged
-        protected override void WndProc(ref Message m)
-        {
-            switch (m.Msg)
-            {
-                case 0x84:
-                    base.WndProc(ref m);
-                    if ((int)m.Result == 0x1)
-                        m.Result = (IntPtr)0x2;
-                    return;
-            }
-
-            base.WndProc(ref m);
-        }
-
         public void GetRealmList()
         {
             RealmList.Items.Clear();
@@ -132,7 +115,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
             string RealmURI = WoWHelper.Instance.RealmURI;
 
             string[] realms = new string[WoWHelper.Instance.RegionMethod(RealmURI).Count()];
-            ComboBox.CheckForIllegalCrossThreadCalls = false;
             realms = WoWHelper.Instance.RegionMethod(RealmURI);
 
             for (int y = 0; y < realms.Length; y++)
@@ -146,10 +128,7 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
         {
             try
             {
-                //Character_Profile.Instance.RealmList.Items.Clear();
-
                 WoWHelper.Instance.GetRealmList(RegionList.SelectedIndex);
-                Console.WriteLine(WoWHelper.Instance.RealmURI);
                 GetRealmList();
             }
             catch(Exception ex)
@@ -161,13 +140,31 @@ namespace AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft
         private void RealmList_SelectedIndexChanged(object sender, EventArgs e)
         {
             Character_Profile.Instance.Init(RegionList.SelectedItem.ToString(), RealmList.SelectedItem.ToString());
+            Auction_House.Instance.Init(RegionList.SelectedItem.ToString(), RealmList.SelectedItem.ToString());
+            Guild_Profile.Instance.Init(RegionList.SelectedItem.ToString(), RealmList.SelectedItem.ToString());
 
+            //When realm and region are selected enable the buttons.
             if (RealmList.SelectedItem != null)
             CharacterProfileButton.Enabled = true;
             GuildProfileButton.Enabled = true;
             RealmStatusButton.Enabled = true;
             AHButton.Enabled = true;
             TokensButton.Enabled = true;
+        }
+
+        //Allows the form to be dragged
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+
+            base.WndProc(ref m);
         }
     }
 }

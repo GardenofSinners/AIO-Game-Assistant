@@ -2,11 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Net;
-using System.Web.Script.Serialization;
-using System.Threading.Tasks;
 using AIO_Game_Assistant.Modular_Windows.Options;
-using System.Linq;
-using AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
@@ -27,17 +23,14 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         public Character_Profile()
         {
             InitializeComponent();
-            //Sets the region dropdown to US by default since it's the first in the queue.
         }
 
-        private string realm;
         private string region;
-        public void Init(string @Region, string Realm)
+        private string realm;
+        public void Init(string WoWRegion, string WoWRealm)
         {
-            realm = Realm;
-            region = @Region;
-
-            Console.WriteLine($"Region {realm} \nRealm: {realm}");
+            region = WoWRegion;
+            realm = WoWRealm;
         }
 
         #region Get User Gear, Appearance, Race etc.
@@ -45,8 +38,6 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
         private void SearchCharacterButton_Click(object sender, EventArgs e)
         {
             string charactername = characterName.Text;
-
-            Console.WriteLine($"Region {realm} \nRealm: {realm}");
 
             string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
 
@@ -299,7 +290,6 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             if (gearJson.Contains("mainHand"))
             {
                 string mainweapon = dict["items"]["mainHand"]["icon"];
-                //mainhandName.Text = dict["items"]["mainHand"]["name"];
                 mainWeapon.Load($"http://wow.zamimg.com/images/wow/icons/large/{mainweapon}.jpg");
                 Console.WriteLine("Main Weapon: Downloaded");
             }
@@ -312,13 +302,11 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             if (gearJson.Contains("offHand"))
             {
                 string offhandweapon = dict["items"]["offHand"]["icon"];
-                //offhandName.Text = dict["items"]["offHand"]["name"];
                 offhandWeapon.Load($"http://wow.zamimg.com/images/wow/icons/large/{offhandweapon}.jpg");
                 Console.WriteLine("Offhand Weapon: Downloaded");
             }
             else
             {
-                //offhandName.Visible = false;
                 offhandWeapon.Image = Properties.Resources.Off_Hand;
                 Console.WriteLine("Offhand Weapon: Item not found");
             }

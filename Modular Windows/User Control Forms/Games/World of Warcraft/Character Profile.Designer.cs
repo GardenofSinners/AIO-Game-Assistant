@@ -63,10 +63,7 @@
             this.neckSlot = new System.Windows.Forms.PictureBox();
             this.headSlot = new System.Windows.Forms.PictureBox();
             this.SearchCharacterButton = new System.Windows.Forms.Button();
-            this.RealmList = new System.Windows.Forms.ComboBox();
             this.characterName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.offhandWeapon)).BeginInit();
@@ -494,7 +491,7 @@
             // 
             // SearchCharacterButton
             // 
-            this.SearchCharacterButton.Location = new System.Drawing.Point(833, 10);
+            this.SearchCharacterButton.Location = new System.Drawing.Point(602, 10);
             this.SearchCharacterButton.Name = "SearchCharacterButton";
             this.SearchCharacterButton.Size = new System.Drawing.Size(155, 23);
             this.SearchCharacterButton.TabIndex = 75;
@@ -502,49 +499,18 @@
             this.SearchCharacterButton.UseVisualStyleBackColor = true;
             this.SearchCharacterButton.Click += new System.EventHandler(this.SearchCharacterButton_Click);
             // 
-            // RealmList
-            // 
-            this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RealmList.FormattingEnabled = true;
-            this.RealmList.Location = new System.Drawing.Point(441, 11);
-            this.RealmList.Name = "RealmList";
-            this.RealmList.Size = new System.Drawing.Size(162, 21);
-            this.RealmList.Sorted = true;
-            this.RealmList.TabIndex = 73;
-            // 
             // characterName
             // 
-            this.characterName.Location = new System.Drawing.Point(143, 13);
+            this.characterName.Location = new System.Drawing.Point(366, 10);
             this.characterName.Name = "characterName";
             this.characterName.Size = new System.Drawing.Size(229, 20);
             this.characterName.TabIndex = 72;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(609, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
-            this.label3.TabIndex = 71;
-            this.label3.Text = "Region:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(372, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 70;
-            this.label2.Text = "Realm:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.Location = new System.Drawing.Point(-2, 13);
+            this.label1.Location = new System.Drawing.Point(233, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(129, 20);
             this.label1.TabIndex = 69;
@@ -598,10 +564,7 @@
             this.Controls.Add(this.neckSlot);
             this.Controls.Add(this.headSlot);
             this.Controls.Add(this.SearchCharacterButton);
-            this.Controls.Add(this.RealmList);
             this.Controls.Add(this.characterName);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "Character_Profile";
@@ -668,10 +631,7 @@
         private System.Windows.Forms.PictureBox headSlot;
         private System.Windows.Forms.Button SearchCharacterButton;
         private System.Windows.Forms.TextBox characterName;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        public System.Windows.Forms.ComboBox RealmList;
     }
 }

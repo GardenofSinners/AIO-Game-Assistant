@@ -163,14 +163,14 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             GetRealms("https://us.api.battle.net/wow/realm/status?locale=en_GB&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void Button3_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();
             GetRealms("https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void Button4_Click(object sender, EventArgs e)
         {
             dataGridView1.Rows.Clear();
             dataGridView1.Refresh();

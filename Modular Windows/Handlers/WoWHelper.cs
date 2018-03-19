@@ -1,13 +1,7 @@
-﻿using AIO_Game_Assistant.Modular_Windows.Games.World_of_Warcraft;
-using AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web.Script.Serialization;
-using System.Windows.Controls;
 
 namespace AIO_Game_Assistant.Modular_Windows.Options
 {
@@ -31,8 +25,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Options
         #region Get the Realmlist
         public void GetRealmList(int index)
         {
-
-            //Console.WriteLine(WorldofWarcraft.Instance.RegionList.SelectedItem);
             
             if (index == 0)
             {

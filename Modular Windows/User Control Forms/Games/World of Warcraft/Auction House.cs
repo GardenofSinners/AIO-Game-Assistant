@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Net;
-using System.Web.Script.Serialization;
+using Newtonsoft.Json.Linq;
+using System.Data.SqlClient;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
@@ -20,141 +20,72 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
             }
         }
 
-        public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
-
         public Auction_House()
         {
             InitializeComponent();
-            //Sets the region dropdown to US by default since it's the first in the queue.
-            RegionList.SelectedIndex = 0;
-            GetRealmList();
         }
 
-        #region Get the Realmlist
-        public void GetRealmList()
+        private string region;
+        private string realm;
+        public void Init(string WoWRegion, string WoWRealm)
         {
-            if (RegionList.SelectedIndex == 0)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
-            }
-            else if (RegionList.SelectedIndex == 1)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
-            }
-            else if (RegionList.SelectedIndex == 2)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
-            }
-            else if (RegionList.SelectedIndex == 3)
-            {
-                //Grabs the data from the below string and puts it into "realmJson".
-                string realmAPIURL = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-                RegionMethod(realmAPIURL);
-            }
+            region = WoWRegion;
+            realm = WoWRealm;
         }
-        #endregion
-
-        #region Region method to prevent duplication of code for getting the realmlists.
-        public void RegionMethod(string api)
-        {
-
-            string realmAPIURL = api;
-
-            var realmJson = new WebClient().DownloadString(realmAPIURL);
-
-            //A dictionary where all values for the deserialized JSON is stored
-            var dict = jss.Deserialize<Dictionary<string, dynamic>>(realmJson);
-
-            //Runs through all the values and gets the value of "Name" for each value.
-            for (int i = 0; i < dict["realms"].Count; i++)
-            {
-                RealmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
-            }
-
-        }
-        #endregion
-
-        #region On RealmList SelectedIndexChange
-        private void RegionList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (RegionList.SelectedIndex == 0)
-            {
-                GetRealmList();
-            }
-            else if (RegionList.SelectedIndex == 1)
-            {
-                GetRealmList();
-            }
-            else if (RegionList.SelectedIndex == 2)
-            {
-                GetRealmList();
-            }
-            else if (RegionList.SelectedIndex == 3)
-            {
-                GetRealmList();
-            }
-        }
-        #endregion
-
 
         public void GetAuctionData()
         {
-            //string charactername = characterName.Text;
-            string realm = RealmList.SelectedItem.ToString();
-            string region = RegionList.SelectedItem.ToString();
 
             DialogResult result = MessageBox.Show("This may take some time to download, the program will be unresponsive in the mean time. " +
                 "Are you sure you want to continue?", "Confirmation", MessageBoxButtons.YesNo);
 
             if (result == DialogResult.Yes)
             {
-
-                jss.MaxJsonLength = int.MaxValue;
-
                 string auctionAPI = $"https://{region}.api.battle.net/wow/auction/data/{realm}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
                 var realmAuctionJson = new WebClient().DownloadString(auctionAPI);
-                var dict = jss.Deserialize<Dictionary<string, dynamic>>(realmAuctionJson);
-
-                var AuctionJson = new WebClient().DownloadString(dict["files"][0]["url"]);
-                var dictionary = jss.Deserialize<Dictionary<string, dynamic>>(AuctionJson);
-
-
-                for (int i = 0; i < dictionary["auctions"].Count; i++)
+                JObject dict = JObject.Parse(realmAuctionJson);
+                var AuctionJson = new WebClient().DownloadString((string)dict["files"][0]["url"]);
+                JObject dictionary = JObject.Parse(AuctionJson);
+                var _db = new SqlConnection
                 {
-                    int itemID = dictionary["auctions"][i]["item"];
-                    string owner = dictionary["auctions"][i]["owner"];
-                    long bid = dictionary["auctions"][i]["bid"];
-                    long buyout = dictionary["auctions"][i]["buyout"];
-                    int quantity = dictionary["auctions"][i]["quantity"];
-                    string timeLeft = dictionary["auctions"][i]["timeLeft"];
+                    ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Modular Windows\Games\World of Warcraft\External Data\wow.mdf;Integrated Security = True"
+                };
 
-                    this.dataGridView1.Rows.Add(itemID, owner, bid, buyout, quantity, timeLeft);
+                _db.Open();
+
+                int i = 0;
+                foreach (JToken token in dictionary["auctions"])
+                {
+                    int itemID = (int)dictionary["auctions"][i]["item"];
+                    string owner = (string)dictionary["auctions"][i]["owner"];
+                    long bid = (long)dictionary["auctions"][i]["bid"];
+                    long buyout = (long)dictionary["auctions"][i]["buyout"];
+                    int quantity = (int)dictionary["auctions"][i]["quantity"];
+                    string timeLeft = (string)dictionary["auctions"][i]["timeLeft"];
+
+                    using (SqlCommand command = new SqlCommand($"SELECT name_enus FROM items WHERE Id={itemID}", _db))
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            dataGridView1.Rows.Add(reader.GetValue(0), owner, bid, buyout, quantity, timeLeft);
+                        }
+                    }
+                    
+                    Console.WriteLine(i);
+                    i++;
                 }
+                
             }
             else if (result == DialogResult.No)
             {
                 MessageBox.Show("Operation Canceled. ", "Confirmation", MessageBoxButtons.OK);
             }
-
         }
 
         private void SearchAHButton_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(RealmList.Text))
-            {
-                MessageBox.Show("Realm is not selected! Go back and pick one!", "Confirmation", MessageBoxButtons.OK);
-            }
-            else
-            {
-                GetAuctionData();
-            }
-
+            GetAuctionData();
         }
     }
 }

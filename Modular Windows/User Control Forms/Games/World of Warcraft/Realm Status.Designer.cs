@@ -153,7 +153,7 @@
             this.button3.TabIndex = 5;
             this.button3.Text = "Korean Servers";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.Button3_Click);
             // 
             // button4
             // 
@@ -163,7 +163,7 @@
             this.button4.TabIndex = 6;
             this.button4.Text = "Taiwan Servers";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.Button4_Click);
             // 
             // Realm_Status
             // 

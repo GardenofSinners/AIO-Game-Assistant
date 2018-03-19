@@ -28,65 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.GuildRealmList = new System.Windows.Forms.ComboBox();
-            this.GuildRegionList = new System.Windows.Forms.ComboBox();
-            this.GuildRegionLabel = new System.Windows.Forms.Label();
-            this.GuildRealmLabel = new System.Windows.Forms.Label();
             this.GuildName = new System.Windows.Forms.TextBox();
             this.GuildNameLabel = new System.Windows.Forms.Label();
             this.GetGuildButton = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // GuildRealmList
-            // 
-            this.GuildRealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GuildRealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GuildRealmList.FormattingEnabled = true;
-            this.GuildRealmList.Location = new System.Drawing.Point(362, 13);
-            this.GuildRealmList.Name = "GuildRealmList";
-            this.GuildRealmList.Size = new System.Drawing.Size(223, 21);
-            this.GuildRealmList.Sorted = true;
-            this.GuildRealmList.TabIndex = 81;
-            // 
-            // GuildRegionList
-            // 
-            this.GuildRegionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.GuildRegionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.GuildRegionList.FormattingEnabled = true;
-            this.GuildRegionList.Items.AddRange(new object[] {
-            "US",
-            "EU",
-            "KR",
-            "TW"});
-            this.GuildRegionList.Location = new System.Drawing.Point(665, 13);
-            this.GuildRegionList.Name = "GuildRegionList";
-            this.GuildRegionList.Size = new System.Drawing.Size(143, 21);
-            this.GuildRegionList.TabIndex = 82;
-            // 
-            // GuildRegionLabel
-            // 
-            this.GuildRegionLabel.AutoSize = true;
-            this.GuildRegionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.GuildRegionLabel.Location = new System.Drawing.Point(595, 13);
-            this.GuildRegionLabel.Name = "GuildRegionLabel";
-            this.GuildRegionLabel.Size = new System.Drawing.Size(64, 20);
-            this.GuildRegionLabel.TabIndex = 83;
-            this.GuildRegionLabel.Text = "Region:";
-            // 
-            // GuildRealmLabel
-            // 
-            this.GuildRealmLabel.AutoSize = true;
-            this.GuildRealmLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.GuildRealmLabel.Location = new System.Drawing.Point(301, 13);
-            this.GuildRealmLabel.Name = "GuildRealmLabel";
-            this.GuildRealmLabel.Size = new System.Drawing.Size(59, 20);
-            this.GuildRealmLabel.TabIndex = 84;
-            this.GuildRealmLabel.Text = "Realm:";
-            // 
             // GuildName
             // 
-            this.GuildName.Location = new System.Drawing.Point(66, 13);
+            this.GuildName.Location = new System.Drawing.Point(350, 15);
             this.GuildName.Name = "GuildName";
             this.GuildName.Size = new System.Drawing.Size(229, 20);
             this.GuildName.TabIndex = 85;
@@ -95,7 +45,7 @@
             // 
             this.GuildNameLabel.AutoSize = true;
             this.GuildNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.GuildNameLabel.Location = new System.Drawing.Point(10, 13);
+            this.GuildNameLabel.Location = new System.Drawing.Point(295, 15);
             this.GuildNameLabel.Name = "GuildNameLabel";
             this.GuildNameLabel.Size = new System.Drawing.Size(50, 20);
             this.GuildNameLabel.TabIndex = 86;
@@ -104,7 +54,7 @@
             // GetGuildButton
             // 
             this.GetGuildButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.GetGuildButton.Location = new System.Drawing.Point(814, 13);
+            this.GetGuildButton.Location = new System.Drawing.Point(590, 15);
             this.GetGuildButton.Name = "GetGuildButton";
             this.GetGuildButton.Size = new System.Drawing.Size(153, 23);
             this.GetGuildButton.TabIndex = 87;
@@ -128,10 +78,6 @@
             this.Controls.Add(this.GetGuildButton);
             this.Controls.Add(this.GuildNameLabel);
             this.Controls.Add(this.GuildName);
-            this.Controls.Add(this.GuildRealmLabel);
-            this.Controls.Add(this.GuildRegionLabel);
-            this.Controls.Add(this.GuildRegionList);
-            this.Controls.Add(this.GuildRealmList);
             this.Name = "Guild_Profile";
             this.Size = new System.Drawing.Size(994, 596);
             this.ResumeLayout(false);
@@ -140,11 +86,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox GuildRealmList;
-        private System.Windows.Forms.ComboBox GuildRegionList;
-        private System.Windows.Forms.Label GuildRegionLabel;
-        private System.Windows.Forms.Label GuildRealmLabel;
         private System.Windows.Forms.TextBox GuildName;
         private System.Windows.Forms.Label GuildNameLabel;
         private System.Windows.Forms.Button GetGuildButton;

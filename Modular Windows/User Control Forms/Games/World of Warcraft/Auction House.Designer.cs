@@ -29,10 +29,6 @@
         private void InitializeComponent()
         {
             this.SearchAHButton = new System.Windows.Forms.Button();
-            this.RegionList = new System.Windows.Forms.ComboBox();
-            this.RealmList = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,59 +42,13 @@
             // 
             // SearchAHButton
             // 
-            this.SearchAHButton.Location = new System.Drawing.Point(727, 26);
+            this.SearchAHButton.Location = new System.Drawing.Point(340, 25);
             this.SearchAHButton.Name = "SearchAHButton";
-            this.SearchAHButton.Size = new System.Drawing.Size(262, 40);
+            this.SearchAHButton.Size = new System.Drawing.Size(275, 65);
             this.SearchAHButton.TabIndex = 82;
             this.SearchAHButton.Text = "Search Auction House";
             this.SearchAHButton.UseVisualStyleBackColor = true;
             this.SearchAHButton.Click += new System.EventHandler(this.SearchAHButton_Click);
-            // 
-            // RegionList
-            // 
-            this.RegionList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RegionList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RegionList.FormattingEnabled = true;
-            this.RegionList.Items.AddRange(new object[] {
-            "US",
-            "EU",
-            "KR",
-            "TW"});
-            this.RegionList.Location = new System.Drawing.Point(579, 42);
-            this.RegionList.Name = "RegionList";
-            this.RegionList.Size = new System.Drawing.Size(143, 21);
-            this.RegionList.TabIndex = 81;
-            // 
-            // RealmList
-            // 
-            this.RealmList.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.RealmList.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.RealmList.FormattingEnabled = true;
-            this.RealmList.Location = new System.Drawing.Point(282, 42);
-            this.RealmList.Name = "RealmList";
-            this.RealmList.Size = new System.Drawing.Size(223, 21);
-            this.RealmList.Sorted = true;
-            this.RealmList.TabIndex = 80;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(511, 42);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 20);
-            this.label3.TabIndex = 78;
-            this.label3.Text = "Region:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(220, 42);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 20);
-            this.label2.TabIndex = 77;
-            this.label2.Text = "Realm:";
             // 
             // dataGridView1
             // 
@@ -166,6 +116,13 @@
             this.Column6.ReadOnly = true;
             this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(0, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 23);
+            this.label1.TabIndex = 0;
+            // 
             // Auction_House
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -173,25 +130,16 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.SearchAHButton);
-            this.Controls.Add(this.RegionList);
-            this.Controls.Add(this.RealmList);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
             this.Name = "Auction_House";
             this.Size = new System.Drawing.Size(986, 617);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button SearchAHButton;
-        private System.Windows.Forms.ComboBox RegionList;
-        private System.Windows.Forms.ComboBox RealmList;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
