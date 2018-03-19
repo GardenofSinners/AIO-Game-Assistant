@@ -1,6 +1,9 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web.Script.Serialization;
 
 namespace AIO_Game_Assistant.Modular_Windows.Options
@@ -25,22 +28,22 @@ namespace AIO_Game_Assistant.Modular_Windows.Options
         #region Get the Realmlist
         public void GetRealmList(int index)
         {
-            
+
             if (index == 0)
             {
                 RealmURI = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             }
             else if (index == 1)
             {
-                RealmURI = "https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = "https://eu.api.battle.net/wow/realm/status?locale=en_GB&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             }
             else if (index == 2)
             {
-                RealmURI = "https://kr.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = "https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             }
             else if (index == 3)
             {
-                RealmURI = "https://tw.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = "https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             }
             Console.WriteLine(RealmURI);
         }
@@ -54,18 +57,21 @@ namespace AIO_Game_Assistant.Modular_Windows.Options
 
             var realmJson = new WebClient().DownloadString(RealmURI);
 
-            //A dictionary where all values for the deserialized JSON is stored
-            var dict = jss.Deserialize<Dictionary<string, dynamic>>(realmJson);
-            string[] realmNames = new string[dict["realms"].Count];
+            JObject dictionary = JObject.Parse(realmJson);
+            string[] realmNames = new string[dictionary["realms"].Count()];
+            int i = 0;
 
-            //Runs through all the values and gets the value of "Name" for each value.
-            for (int i = 0; i < dict["realms"].Count; i++)
+            foreach (JToken realm in dictionary["realms"])
             {
-                //RealmList.Items.Add(dict["realms"][i]["name"]); //outputs the realms
-                realmNames[i] = dict["realms"][i]["name"];
+                string realmname = (string)dictionary["realms"][i]["name"];
+                byte[] bytes = Encoding.Default.GetBytes(realmname);
+                realmname = Encoding.UTF8.GetString(bytes);
+                realmNames[i] = realmname;
+                i++;
             }
 
             return realmNames;
+
         }
         #endregion
     }
