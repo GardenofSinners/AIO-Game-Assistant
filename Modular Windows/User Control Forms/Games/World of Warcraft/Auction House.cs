@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Windows.Forms;
 using System.Net;
+using System.Data.SQLite;
 using Newtonsoft.Json.Linq;
-using System.Data.SqlClient;
+using System.IO;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
@@ -46,34 +47,34 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                 JObject dict = JObject.Parse(realmAuctionJson);
                 var AuctionJson = new WebClient().DownloadString((string)dict["files"][0]["url"]);
                 JObject dictionary = JObject.Parse(AuctionJson);
-                var _db = new SqlConnection
+                using (SQLiteConnection _db = new SQLiteConnection($"Data Source={Directory.GetCurrentDirectory()}\\Modular Windows\\Games\\World of Warcraft\\External Data\\wow.db;Version=3;"))
                 {
-                    ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = |DataDirectory|\Modular Windows\Games\World of Warcraft\External Data\wow.mdf;Integrated Security = True"
-                };
-
-                _db.Open();
-
-                int i = 0;
-                foreach (JToken token in dictionary["auctions"])
-                {
-                    int itemID = (int)dictionary["auctions"][i]["item"];
-                    string owner = (string)dictionary["auctions"][i]["owner"];
-                    long bid = (long)dictionary["auctions"][i]["bid"];
-                    long buyout = (long)dictionary["auctions"][i]["buyout"];
-                    int quantity = (int)dictionary["auctions"][i]["quantity"];
-                    string timeLeft = (string)dictionary["auctions"][i]["timeLeft"];
-
-                    using (SqlCommand command = new SqlCommand($"SELECT name_enus FROM items WHERE Id={itemID}", _db))
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    _db.Open();
+                    int i = 0;
+                    foreach (JToken token in dictionary["auctions"])
                     {
-                        while (reader.Read())
+                        int itemID = (int)dictionary["auctions"][i]["item"];
+                        string owner = (string)dictionary["auctions"][i]["owner"];
+                        long bid = (long)dictionary["auctions"][i]["bid"];
+                        long buyout = (long)dictionary["auctions"][i]["buyout"];
+                        int quantity = (int)dictionary["auctions"][i]["quantity"];
+                        string timeLeft = (string)dictionary["auctions"][i]["timeLeft"];
+
+                        using(SQLiteCommand command = new SQLiteCommand($"SELECT name_enus FROM items WHERE Id={itemID}", _db))
                         {
-                            dataGridView1.Rows.Add(reader.GetValue(0), owner, bid, buyout, quantity, timeLeft);
+                            using (SQLiteDataReader reader = command.ExecuteReader())
+                            {
+                                while (reader.Read())
+                                {
+                                    dataGridView1.Rows.Add(reader.GetValue(0), owner, bid, buyout, quantity, timeLeft);
+                                }
+                            }
                         }
+
+                        Console.WriteLine(i);
+                        i++;
                     }
-                    
-                    Console.WriteLine(i);
-                    i++;
+                    _db.Close();
                 }
                 
             }
