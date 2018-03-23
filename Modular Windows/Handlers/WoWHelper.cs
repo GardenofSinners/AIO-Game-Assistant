@@ -45,7 +45,6 @@ namespace AIO_Game_Assistant.Modular_Windows.Options
             {
                 RealmURI = "https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             }
-            Console.WriteLine(RealmURI);
         }
         #endregion
 

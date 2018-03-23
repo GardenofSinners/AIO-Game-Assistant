@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using System.Net;
 using AIO_Game_Assistant.Modular_Windows.Options;
+using System.Text;
 
 namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_Warcraft
 {
@@ -37,10 +38,30 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
         private void SearchCharacterButton_Click(object sender, EventArgs e)
         {
+
+            string locale = "";
+            if (region == "US")
+            {
+                locale = "en_US";
+            }
+            else if (region == "EU")
+            {
+                locale = "en_GB";
+            }
+            else if (region == "KR")
+            {
+                locale = "ko_KR";
+            }
+            else
+            {
+                locale = "zh_TW";
+            }
+
             string charactername = characterName.Text;
+            byte[] bytes = Encoding.Default.GetBytes(characterName.Text);
+            charactername = Encoding.UTF8.GetString(bytes);
 
-            string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-
+            string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
             try
             {
                 string characterJson = new WebClient().DownloadString(characterAPI);
@@ -53,7 +74,26 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                 thumbnailUrl = $"http://render-{region}.worldofwarcraft.com/character/{thumbnailUrl}profilemain.jpg";
 
                 pictureBox1.Load(thumbnailUrl);
-                UserAppearanceandGear();
+                UserAppearanceandGear(locale);
+
+                //labels to become visible
+                headName.Visible = true;
+                neckName.Visible = true;
+                shoulderName.Visible = true;
+                cloakName.Visible = true;
+                chestName.Visible = true;
+                shirtName.Visible = true;
+                tabardName.Visible = true;
+                wristName.Visible = true;
+                handsName.Visible = true;
+                waistName.Visible = true;
+                legName.Visible = true;
+                feetName.Visible = true;
+                ring1Name.Visible = true;
+                ring2Name.Visible = true;
+                trinket1Name.Visible = true;
+                trinket2Name.Visible = true;
+
             }
             catch(WebException)
             {
@@ -66,12 +106,15 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
 
         }
 
-        public void UserAppearanceandGear()
+        public void UserAppearanceandGear(string locale)
         {
 
             //icons are displayed in a 56x56 format
             string charactername = characterName.Text;
-            string gearAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?fields=items&locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+            byte[] bytes = Encoding.Default.GetBytes(characterName.Text);
+            charactername = Encoding.UTF8.GetString(bytes);
+            //얼안
+            string gearAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?fields=items&locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
 
             var gearJson = new WebClient().DownloadString(gearAPI);
 

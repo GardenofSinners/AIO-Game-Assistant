@@ -70,8 +70,6 @@ namespace AIO_Game_Assistant.Modular_Windows.User_Control_Forms.Games.World_of_W
                                 }
                             }
                         }
-
-                        Console.WriteLine(i);
                         i++;
                     }
                     _db.Close();

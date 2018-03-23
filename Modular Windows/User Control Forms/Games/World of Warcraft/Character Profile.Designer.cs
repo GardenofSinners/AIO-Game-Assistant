@@ -93,7 +93,7 @@
             this.trinket2Name.BackColor = System.Drawing.Color.Transparent;
             this.trinket2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.trinket2Name.ForeColor = System.Drawing.Color.White;
-            this.trinket2Name.Location = new System.Drawing.Point(748, 488);
+            this.trinket2Name.Location = new System.Drawing.Point(368, 480);
             this.trinket2Name.Name = "trinket2Name";
             this.trinket2Name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.trinket2Name.Size = new System.Drawing.Size(160, 21);
@@ -101,6 +101,7 @@
             this.trinket2Name.TabStop = true;
             this.trinket2Name.Text = "linkLabel9";
             this.trinket2Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.trinket2Name.Visible = false;
             this.trinket2Name.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // trinket1Name
@@ -109,7 +110,7 @@
             this.trinket1Name.BackColor = System.Drawing.Color.Transparent;
             this.trinket1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.trinket1Name.ForeColor = System.Drawing.Color.White;
-            this.trinket1Name.Location = new System.Drawing.Point(747, 427);
+            this.trinket1Name.Location = new System.Drawing.Point(368, 419);
             this.trinket1Name.Name = "trinket1Name";
             this.trinket1Name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.trinket1Name.Size = new System.Drawing.Size(166, 21);
@@ -117,6 +118,7 @@
             this.trinket1Name.TabStop = true;
             this.trinket1Name.Text = "linkLabel10";
             this.trinket1Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.trinket1Name.Visible = false;
             this.trinket1Name.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // ring2Name
@@ -125,7 +127,7 @@
             this.ring2Name.BackColor = System.Drawing.Color.Transparent;
             this.ring2Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.ring2Name.ForeColor = System.Drawing.Color.White;
-            this.ring2Name.Location = new System.Drawing.Point(748, 364);
+            this.ring2Name.Location = new System.Drawing.Point(368, 356);
             this.ring2Name.Name = "ring2Name";
             this.ring2Name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ring2Name.Size = new System.Drawing.Size(166, 21);
@@ -133,6 +135,7 @@
             this.ring2Name.TabStop = true;
             this.ring2Name.Text = "linkLabel11";
             this.ring2Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ring2Name.Visible = false;
             this.ring2Name.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // ring1Name
@@ -141,7 +144,7 @@
             this.ring1Name.BackColor = System.Drawing.Color.Transparent;
             this.ring1Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.ring1Name.ForeColor = System.Drawing.Color.White;
-            this.ring1Name.Location = new System.Drawing.Point(748, 302);
+            this.ring1Name.Location = new System.Drawing.Point(368, 286);
             this.ring1Name.Name = "ring1Name";
             this.ring1Name.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ring1Name.Size = new System.Drawing.Size(166, 21);
@@ -149,6 +152,7 @@
             this.ring1Name.TabStop = true;
             this.ring1Name.Text = "linkLabel12";
             this.ring1Name.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ring1Name.Visible = false;
             this.ring1Name.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // feetName
@@ -157,7 +161,7 @@
             this.feetName.BackColor = System.Drawing.Color.Transparent;
             this.feetName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.feetName.ForeColor = System.Drawing.Color.White;
-            this.feetName.Location = new System.Drawing.Point(748, 240);
+            this.feetName.Location = new System.Drawing.Point(368, 232);
             this.feetName.Name = "feetName";
             this.feetName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.feetName.Size = new System.Drawing.Size(166, 21);
@@ -165,6 +169,7 @@
             this.feetName.TabStop = true;
             this.feetName.Text = "linkLabel13";
             this.feetName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.feetName.Visible = false;
             this.feetName.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // legName
@@ -172,7 +177,7 @@
             this.legName.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.legName.BackColor = System.Drawing.Color.Transparent;
             this.legName.ForeColor = System.Drawing.Color.White;
-            this.legName.Location = new System.Drawing.Point(748, 178);
+            this.legName.Location = new System.Drawing.Point(368, 170);
             this.legName.Name = "legName";
             this.legName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.legName.Size = new System.Drawing.Size(161, 21);
@@ -180,6 +185,7 @@
             this.legName.TabStop = true;
             this.legName.Text = "linkLabel14";
             this.legName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.legName.Visible = false;
             this.legName.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // waistName
@@ -188,7 +194,7 @@
             this.waistName.BackColor = System.Drawing.Color.Transparent;
             this.waistName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.waistName.ForeColor = System.Drawing.Color.White;
-            this.waistName.Location = new System.Drawing.Point(748, 116);
+            this.waistName.Location = new System.Drawing.Point(368, 108);
             this.waistName.Name = "waistName";
             this.waistName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.waistName.Size = new System.Drawing.Size(166, 21);
@@ -196,6 +202,7 @@
             this.waistName.TabStop = true;
             this.waistName.Text = "linkLabel15";
             this.waistName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.waistName.Visible = false;
             this.waistName.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // handsName
@@ -204,7 +211,7 @@
             this.handsName.BackColor = System.Drawing.Color.Transparent;
             this.handsName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.handsName.ForeColor = System.Drawing.Color.White;
-            this.handsName.Location = new System.Drawing.Point(748, 54);
+            this.handsName.Location = new System.Drawing.Point(368, 46);
             this.handsName.Name = "handsName";
             this.handsName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.handsName.Size = new System.Drawing.Size(166, 21);
@@ -212,6 +219,7 @@
             this.handsName.TabStop = true;
             this.handsName.Text = "linkLabel16";
             this.handsName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.handsName.Visible = false;
             this.handsName.VisitedLinkColor = System.Drawing.Color.Transparent;
             // 
             // wristName
@@ -220,13 +228,14 @@
             this.wristName.BackColor = System.Drawing.Color.Transparent;
             this.wristName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.wristName.ForeColor = System.Drawing.Color.White;
-            this.wristName.Location = new System.Drawing.Point(86, 488);
+            this.wristName.Location = new System.Drawing.Point(86, 480);
             this.wristName.Name = "wristName";
             this.wristName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.wristName.Size = new System.Drawing.Size(55, 13);
             this.wristName.TabIndex = 101;
             this.wristName.TabStop = true;
             this.wristName.Text = "linkLabel8";
+            this.wristName.Visible = false;
             // 
             // tabardName
             // 
@@ -234,13 +243,14 @@
             this.tabardName.BackColor = System.Drawing.Color.Transparent;
             this.tabardName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.tabardName.ForeColor = System.Drawing.Color.White;
-            this.tabardName.Location = new System.Drawing.Point(86, 426);
+            this.tabardName.Location = new System.Drawing.Point(86, 418);
             this.tabardName.Name = "tabardName";
             this.tabardName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabardName.Size = new System.Drawing.Size(55, 13);
             this.tabardName.TabIndex = 100;
             this.tabardName.TabStop = true;
             this.tabardName.Text = "linkLabel7";
+            this.tabardName.Visible = false;
             // 
             // shirtName
             // 
@@ -248,13 +258,14 @@
             this.shirtName.BackColor = System.Drawing.Color.Transparent;
             this.shirtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.shirtName.ForeColor = System.Drawing.Color.White;
-            this.shirtName.Location = new System.Drawing.Point(86, 364);
+            this.shirtName.Location = new System.Drawing.Point(86, 356);
             this.shirtName.Name = "shirtName";
             this.shirtName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.shirtName.Size = new System.Drawing.Size(55, 13);
             this.shirtName.TabIndex = 99;
             this.shirtName.TabStop = true;
             this.shirtName.Text = "linkLabel6";
+            this.shirtName.Visible = false;
             // 
             // chestName
             // 
@@ -262,13 +273,14 @@
             this.chestName.BackColor = System.Drawing.Color.Transparent;
             this.chestName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.chestName.ForeColor = System.Drawing.Color.White;
-            this.chestName.Location = new System.Drawing.Point(86, 302);
+            this.chestName.Location = new System.Drawing.Point(86, 294);
             this.chestName.Name = "chestName";
             this.chestName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.chestName.Size = new System.Drawing.Size(55, 13);
             this.chestName.TabIndex = 98;
             this.chestName.TabStop = true;
             this.chestName.Text = "linkLabel5";
+            this.chestName.Visible = false;
             // 
             // cloakName
             // 
@@ -276,13 +288,14 @@
             this.cloakName.BackColor = System.Drawing.Color.Transparent;
             this.cloakName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.cloakName.ForeColor = System.Drawing.Color.White;
-            this.cloakName.Location = new System.Drawing.Point(86, 240);
+            this.cloakName.Location = new System.Drawing.Point(86, 232);
             this.cloakName.Name = "cloakName";
             this.cloakName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.cloakName.Size = new System.Drawing.Size(55, 13);
             this.cloakName.TabIndex = 97;
             this.cloakName.TabStop = true;
             this.cloakName.Text = "linkLabel4";
+            this.cloakName.Visible = false;
             // 
             // shoulderName
             // 
@@ -290,13 +303,14 @@
             this.shoulderName.BackColor = System.Drawing.Color.Transparent;
             this.shoulderName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.shoulderName.ForeColor = System.Drawing.Color.White;
-            this.shoulderName.Location = new System.Drawing.Point(86, 178);
+            this.shoulderName.Location = new System.Drawing.Point(86, 170);
             this.shoulderName.Name = "shoulderName";
             this.shoulderName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.shoulderName.Size = new System.Drawing.Size(55, 13);
             this.shoulderName.TabIndex = 96;
             this.shoulderName.TabStop = true;
             this.shoulderName.Text = "linkLabel3";
+            this.shoulderName.Visible = false;
             // 
             // neckName
             // 
@@ -304,13 +318,14 @@
             this.neckName.BackColor = System.Drawing.Color.Transparent;
             this.neckName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.neckName.ForeColor = System.Drawing.Color.White;
-            this.neckName.Location = new System.Drawing.Point(86, 116);
+            this.neckName.Location = new System.Drawing.Point(86, 108);
             this.neckName.Name = "neckName";
             this.neckName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.neckName.Size = new System.Drawing.Size(55, 13);
             this.neckName.TabIndex = 95;
             this.neckName.TabStop = true;
             this.neckName.Text = "linkLabel2";
+            this.neckName.Visible = false;
             // 
             // headName
             // 
@@ -319,17 +334,18 @@
             this.headName.BackColor = System.Drawing.Color.Transparent;
             this.headName.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.headName.ForeColor = System.Drawing.Color.White;
-            this.headName.Location = new System.Drawing.Point(86, 54);
+            this.headName.Location = new System.Drawing.Point(86, 46);
             this.headName.Name = "headName";
             this.headName.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.headName.Size = new System.Drawing.Size(55, 13);
             this.headName.TabIndex = 94;
             this.headName.TabStop = true;
             this.headName.Text = "linkLabel1";
+            this.headName.Visible = false;
             // 
             // offhandWeapon
             // 
-            this.offhandWeapon.Location = new System.Drawing.Point(547, 522);
+            this.offhandWeapon.Location = new System.Drawing.Point(306, 542);
             this.offhandWeapon.Name = "offhandWeapon";
             this.offhandWeapon.Size = new System.Drawing.Size(56, 56);
             this.offhandWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -338,7 +354,7 @@
             // 
             // mainWeapon
             // 
-            this.mainWeapon.Location = new System.Drawing.Point(367, 522);
+            this.mainWeapon.Location = new System.Drawing.Point(24, 542);
             this.mainWeapon.Name = "mainWeapon";
             this.mainWeapon.Size = new System.Drawing.Size(56, 56);
             this.mainWeapon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -347,7 +363,7 @@
             // 
             // trinket2Slot
             // 
-            this.trinket2Slot.Location = new System.Drawing.Point(920, 488);
+            this.trinket2Slot.Location = new System.Drawing.Point(306, 480);
             this.trinket2Slot.Name = "trinket2Slot";
             this.trinket2Slot.Size = new System.Drawing.Size(56, 56);
             this.trinket2Slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -356,7 +372,7 @@
             // 
             // trinket1Slot
             // 
-            this.trinket1Slot.Location = new System.Drawing.Point(920, 426);
+            this.trinket1Slot.Location = new System.Drawing.Point(306, 418);
             this.trinket1Slot.Name = "trinket1Slot";
             this.trinket1Slot.Size = new System.Drawing.Size(56, 56);
             this.trinket1Slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -365,7 +381,7 @@
             // 
             // ring2Slot
             // 
-            this.ring2Slot.Location = new System.Drawing.Point(920, 364);
+            this.ring2Slot.Location = new System.Drawing.Point(306, 356);
             this.ring2Slot.Name = "ring2Slot";
             this.ring2Slot.Size = new System.Drawing.Size(56, 56);
             this.ring2Slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -374,7 +390,7 @@
             // 
             // ring1Slot
             // 
-            this.ring1Slot.Location = new System.Drawing.Point(920, 302);
+            this.ring1Slot.Location = new System.Drawing.Point(306, 294);
             this.ring1Slot.Name = "ring1Slot";
             this.ring1Slot.Size = new System.Drawing.Size(56, 56);
             this.ring1Slot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -383,7 +399,7 @@
             // 
             // feetSlot
             // 
-            this.feetSlot.Location = new System.Drawing.Point(920, 240);
+            this.feetSlot.Location = new System.Drawing.Point(306, 232);
             this.feetSlot.Name = "feetSlot";
             this.feetSlot.Size = new System.Drawing.Size(56, 56);
             this.feetSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -392,7 +408,7 @@
             // 
             // legsSlot
             // 
-            this.legsSlot.Location = new System.Drawing.Point(920, 178);
+            this.legsSlot.Location = new System.Drawing.Point(306, 170);
             this.legsSlot.Name = "legsSlot";
             this.legsSlot.Size = new System.Drawing.Size(56, 56);
             this.legsSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -401,7 +417,7 @@
             // 
             // waistSlot
             // 
-            this.waistSlot.Location = new System.Drawing.Point(920, 116);
+            this.waistSlot.Location = new System.Drawing.Point(306, 108);
             this.waistSlot.Name = "waistSlot";
             this.waistSlot.Size = new System.Drawing.Size(56, 56);
             this.waistSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,7 +426,7 @@
             // 
             // handsSlot
             // 
-            this.handsSlot.Location = new System.Drawing.Point(920, 54);
+            this.handsSlot.Location = new System.Drawing.Point(306, 46);
             this.handsSlot.Name = "handsSlot";
             this.handsSlot.Size = new System.Drawing.Size(56, 56);
             this.handsSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -419,7 +435,7 @@
             // 
             // wristSlot
             // 
-            this.wristSlot.Location = new System.Drawing.Point(19, 488);
+            this.wristSlot.Location = new System.Drawing.Point(24, 480);
             this.wristSlot.Name = "wristSlot";
             this.wristSlot.Size = new System.Drawing.Size(56, 56);
             this.wristSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -428,7 +444,7 @@
             // 
             // tabardSlot
             // 
-            this.tabardSlot.Location = new System.Drawing.Point(19, 426);
+            this.tabardSlot.Location = new System.Drawing.Point(24, 418);
             this.tabardSlot.Name = "tabardSlot";
             this.tabardSlot.Size = new System.Drawing.Size(56, 56);
             this.tabardSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -437,7 +453,7 @@
             // 
             // shirtSlot
             // 
-            this.shirtSlot.Location = new System.Drawing.Point(19, 364);
+            this.shirtSlot.Location = new System.Drawing.Point(24, 356);
             this.shirtSlot.Name = "shirtSlot";
             this.shirtSlot.Size = new System.Drawing.Size(56, 56);
             this.shirtSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -446,7 +462,7 @@
             // 
             // chestSlot
             // 
-            this.chestSlot.Location = new System.Drawing.Point(19, 302);
+            this.chestSlot.Location = new System.Drawing.Point(24, 294);
             this.chestSlot.Name = "chestSlot";
             this.chestSlot.Size = new System.Drawing.Size(56, 56);
             this.chestSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -455,7 +471,7 @@
             // 
             // cloakSlot
             // 
-            this.cloakSlot.Location = new System.Drawing.Point(19, 240);
+            this.cloakSlot.Location = new System.Drawing.Point(24, 232);
             this.cloakSlot.Name = "cloakSlot";
             this.cloakSlot.Size = new System.Drawing.Size(56, 56);
             this.cloakSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -464,7 +480,7 @@
             // 
             // shoulderSlot
             // 
-            this.shoulderSlot.Location = new System.Drawing.Point(19, 178);
+            this.shoulderSlot.Location = new System.Drawing.Point(24, 170);
             this.shoulderSlot.Name = "shoulderSlot";
             this.shoulderSlot.Size = new System.Drawing.Size(56, 56);
             this.shoulderSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -473,7 +489,7 @@
             // 
             // neckSlot
             // 
-            this.neckSlot.Location = new System.Drawing.Point(19, 116);
+            this.neckSlot.Location = new System.Drawing.Point(24, 108);
             this.neckSlot.Name = "neckSlot";
             this.neckSlot.Size = new System.Drawing.Size(56, 56);
             this.neckSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -482,7 +498,7 @@
             // 
             // headSlot
             // 
-            this.headSlot.Location = new System.Drawing.Point(19, 54);
+            this.headSlot.Location = new System.Drawing.Point(24, 46);
             this.headSlot.Name = "headSlot";
             this.headSlot.Size = new System.Drawing.Size(56, 56);
             this.headSlot.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -518,17 +534,18 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(1, 31);
+            this.pictureBox1.Location = new System.Drawing.Point(535, 46);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(986, 568);
+            this.pictureBox1.Size = new System.Drawing.Size(448, 552);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 68;
+            this.pictureBox1.TabIndex = 111;
             this.pictureBox1.TabStop = false;
             // 
             // Character_Profile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.trinket2Name);
             this.Controls.Add(this.trinket1Name);
             this.Controls.Add(this.ring2Name);
@@ -566,7 +583,6 @@
             this.Controls.Add(this.SearchCharacterButton);
             this.Controls.Add(this.characterName);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
             this.Name = "Character_Profile";
             this.Size = new System.Drawing.Size(986, 602);
             ((System.ComponentModel.ISupportInitialize)(this.offhandWeapon)).EndInit();
