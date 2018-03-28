@@ -1,0 +1,52 @@
+﻿<Window x:Class="VisualPlugin.UI.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+		xmlns:livet="http://schemas.livet-mvvm.net/2011/wpf"
+		xmlns:vm="clr-namespace:VisualPlugin.UI.ViewModels"
+		Title="Game Assistant"
+		Width="525"
+		Height="350"
+		Background="{DynamicResource ThemeBrushKey}"
+		UseLayoutRounding="True" WindowStartupLocation="CenterScreen">
+	<Window.DataContext>
+		<vm:MainWindowViewModel /> <!-- Ignore this if it shows as an error just rebuild the project and it'll work. -->
+	</Window.DataContext>
+
+	<Grid>
+		<ItemsControl ItemsSource="{Binding Plugins}"
+					  Padding="4">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<Border BorderBrush="{DynamicResource BorderBrushKey}"
+							BorderThickness="1"
+							Padding="8"
+							Margin="4">
+						<Grid>
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition />
+								<ColumnDefinition Width="Auto" />
+								<ColumnDefinition Width="Auto" />
+							</Grid.ColumnDefinitions>
+
+							<TextBlock Text="{Binding Plugin.Name}"
+									   Foreground="{DynamicResource ForegroundBrushKey}"
+									   VerticalAlignment="Center" />
+                            <Button Grid.Column="1"
+									Content="Run Plugin"
+									Padding="10,4"
+									Margin="8,0,0,0">
+                                <i:Interaction.Triggers>
+                                    <i:EventTrigger EventName="Click">
+                                        <livet:LivetCallMethodAction MethodTarget="{Binding Plugin}"
+																	 MethodName="Proc" />
+                                    </i:EventTrigger>
+                                </i:Interaction.Triggers>
+                            </Button>
+                        </Grid>
+					</Border>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</Grid>
+</Window>

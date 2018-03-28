@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="VisualPlugin.Sample1.User_Controls.Character_Profile"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VisualPlugin.Sample1.User_Controls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Width="969" Height="591" HorizontalAlignment="Right" Margin="0,0,-169,-141" VerticalAlignment="Top" Background="White">
+
+        <!-- User Information -->
+        <TextBox x:Name="characterName" HorizontalAlignment="Left" Height="23" Margin="380,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Character Name:" HorizontalAlignment="Left" Margin="281,6,0,0" VerticalAlignment="Top"/>
+        <Button Content="Search Character" HorizontalAlignment="Left" Margin="505,10,0,0" VerticalAlignment="Top" Width="134" Click="Button_Click"/>
+
+        <!-- Character Gear Images -->
+        <Image x:Name="headSlot" HorizontalAlignment="Left" Height="56" Margin="39,39,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="neckSlot" HorizontalAlignment="Left" Height="56" Margin="39,100,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="shoulderSlot" HorizontalAlignment="Left" Height="56" Margin="39,161,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="cloakSlot" HorizontalAlignment="Left" Height="56" Margin="39,222,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="chestSlot" HorizontalAlignment="Left" Height="56" Margin="39,283,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="shirtSlot" HorizontalAlignment="Left" Height="56" Margin="39,344,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="tabardSlot" HorizontalAlignment="Left" Height="56" Margin="39,405,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="wristSlot" HorizontalAlignment="Left" Height="56" Margin="39,466,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="mainWeapon" HorizontalAlignment="Left" Height="56" Margin="39,527,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="handsSlot" HorizontalAlignment="Left" Height="56" Margin="271,39,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="waistSlot" HorizontalAlignment="Left" Height="56" Margin="271,100,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="legSlot" HorizontalAlignment="Left" Height="56" Margin="271,161,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="feetSlot" HorizontalAlignment="Left" Height="56" Margin="271,222,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="ring1Slot" HorizontalAlignment="Left" Height="56" Margin="271,283,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="ring2Slot" HorizontalAlignment="Left" Height="56" Margin="271,344,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="trinket1Slot" HorizontalAlignment="Left" Height="56" Margin="271,405,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="trinket2Slot" HorizontalAlignment="Left" Height="56" Margin="271,466,0,0" VerticalAlignment="Top" Width="56"/>
+        <Image x:Name="offhandWeapon" HorizontalAlignment="Left" Height="56" Margin="271,527,0,0" VerticalAlignment="Top" Width="56" Stretch="Fill"/>
+
+        <!-- Character Image -->
+        <Image x:Name="characterImage" HorizontalAlignment="Left" Height="521" Margin="576,39,0,0" VerticalAlignment="Top" Width="393"/>
+        
+        <!-- Image Names / Names of Items -->
+        <Label HorizontalAlignment="Left" Margin="332,527,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="trinket2Name" HorizontalAlignment="Left" Margin="332,466,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="trinket1Name" HorizontalAlignment="Left" Margin="332,405,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ring2Name" HorizontalAlignment="Left" Margin="332,344,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="ring1Name" HorizontalAlignment="Left" Margin="332,283,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="feetName" HorizontalAlignment="Left" Margin="332,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="legName" HorizontalAlignment="Left" Margin="332,161,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="waistName" HorizontalAlignment="Left" Margin="332,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="handsName" HorizontalAlignment="Left" Margin="332,39,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="headName" HorizontalAlignment="Left" Margin="100,39,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="neckName" HorizontalAlignment="Left" Margin="100,100,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="shoulderName" HorizontalAlignment="Left" Margin="100,161,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="cloakName" HorizontalAlignment="Left" Margin="100,222,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="chestName" HorizontalAlignment="Left" Margin="100,283,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="shirtName" HorizontalAlignment="Left" Margin="100,344,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="tabardName" HorizontalAlignment="Left" Margin="100,405,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="wristName" HorizontalAlignment="Left" Margin="100,466,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="100,527,0,0" VerticalAlignment="Top" />
+
+    </Grid>
+</UserControl>

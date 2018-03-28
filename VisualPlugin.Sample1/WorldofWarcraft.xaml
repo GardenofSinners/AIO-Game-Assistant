@@ -1,0 +1,29 @@
+﻿<Window x:Class="VisualPlugin.Sample1.WorldofWarcraft"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VisualPlugin.Sample1"
+        mc:Ignorable="d"
+        Title="World of Warcraft" Height="614" Width="1105">
+    <Grid>
+        <Button x:Name="CharacterProfileButton" Content="Character Profile" HorizontalAlignment="Left" Margin="0,75,0,0" VerticalAlignment="Top" Width="113" Height="48" Click="CharacterProfileButton_Click" IsEnabled="False"/>
+        <Button x:Name="GuildProfileButton" Content="Guild Profile" HorizontalAlignment="Left" Margin="0,128,0,0" VerticalAlignment="Top" Width="113" Height="48" Click="GuildProfileButton_Click" IsEnabled="False"/>
+        <Button x:Name="RealmStatusButton" Content="Realm Status" HorizontalAlignment="Left" Margin="0,181,0,0" VerticalAlignment="Top" Width="113" Height="48" Click="RealmStatusButton_Click"/>
+        <Button x:Name="AHButton" Content="Auction House" HorizontalAlignment="Left" Margin="0,234,0,0" VerticalAlignment="Top" Width="113" Height="48" Click="AHButton_Click" IsEnabled="False"/>
+        <Button x:Name="TokensButton" Content="Tokens" HorizontalAlignment="Left" Margin="0,287,0,0" VerticalAlignment="Top" Width="113" Height="48" Click="TokensButton_Click" IsEnabled="False"/>
+        <Label Content="Region" HorizontalAlignment="Left" Margin="2,476,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+        <Label Content="Realmlist" HorizontalAlignment="Left" Margin="2,527,0,0" VerticalAlignment="Top" FontFamily="Century Gothic"/>
+        <ComboBox x:Name="RegionList" HorizontalAlignment="Left" Margin="2,501,0,0" VerticalAlignment="Top" Width="113" FontFamily="Century Gothic" SelectionChanged="RegionList_SelectionChanged">
+            <ComboBoxItem Content="US"/>
+            <ComboBoxItem Content="EU"/>
+            <ComboBoxItem Content="KR"/>
+            <ComboBoxItem Content="TW"/>
+        </ComboBox>
+        <ComboBox x:Name="RealmList" HorizontalAlignment="Left" Margin="2,552,0,0" VerticalAlignment="Top" Width="113" FontFamily="Century Gothic" SelectionChanged="RealmList_SelectionChanged"/>
+        <Canvas HorizontalAlignment="Left" Height="508" Margin="0,75,0,0" VerticalAlignment="Top" Width="115"/>
+        <Canvas x:Name="InfoCanvas" HorizontalAlignment="Left" Height="583" Margin="120,0,0,0" VerticalAlignment="Top" Width="977">
+        </Canvas>
+
+    </Grid>
+</Window>
