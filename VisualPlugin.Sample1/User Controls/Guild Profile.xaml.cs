@@ -17,6 +17,8 @@ namespace VisualPlugin.Sample1.User_Controls
     public partial class Guild_Profile : UserControl
     {
 
+        string apiKey = WorldofWarcraft.APIKey;
+
         private static Guild_Profile _instance;
 
         public static Guild_Profile Instance {
@@ -90,9 +92,9 @@ namespace VisualPlugin.Sample1.User_Controls
             }
 
             string guildname = GuildName.Text;
-            string guildNewsApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=news&locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-            string guildAchievementsApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=achievements&locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
-            string guildMembersApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=members&locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+            string guildNewsApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=news&locale={locale}&apikey={apiKey}";
+            string guildAchievementsApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=achievements&locale={locale}&apikey={apiKey}";
+            string guildMembersApi = $"https://{region}.api.battle.net/wow/guild/{realm}/{guildname}?fields=members&locale={locale}&apikey={apiKey}";
 
             if (GuildNewsCheck.IsChecked == true)
             {
@@ -186,7 +188,7 @@ namespace VisualPlugin.Sample1.User_Controls
             {
                 JArray achievementsCompleted = (JArray)guildAchievements["achievements"]["achievementsCompleted"];
 
-                string guildAchievementNamesApi = new WebClient().DownloadString($"https://{region}.api.battle.net/wow/achievement/{achievementsCompleted[i]}?locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+                string guildAchievementNamesApi = new WebClient().DownloadString($"https://{region}.api.battle.net/wow/achievement/{achievementsCompleted[i]}?locale={locale}&apikey={apiKey}");
                 JObject guildAchievementNames = JObject.Parse(guildAchievementNamesApi);
 
                 string achievementName = (string)guildAchievementNames["title"];

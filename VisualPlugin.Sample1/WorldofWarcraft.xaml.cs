@@ -20,6 +20,7 @@ namespace VisualPlugin.Sample1
     public partial class WorldofWarcraft : Window
     {
 
+        public static string APIKey = "";
         public static WorldofWarcraft _instance;
 
         public static WorldofWarcraft Instance {

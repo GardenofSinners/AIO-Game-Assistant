@@ -11,6 +11,8 @@ namespace VisualPlugin.Sample1.Handler
 {
     public class WoWHelper
     {
+        string apiKey = WorldofWarcraft.APIKey;
+
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
         public string RealmURI;
 
@@ -31,19 +33,19 @@ namespace VisualPlugin.Sample1.Handler
 
             if (index == 0)
             {
-                RealmURI = "https://us.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = $"https://us.api.battle.net/wow/realm/status?locale=en_US&apikey={apiKey}";
             }
             else if (index == 1)
             {
-                RealmURI = "https://eu.api.battle.net/wow/realm/status?locale=en_GB&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = $"https://eu.api.battle.net/wow/realm/status?locale=en_GB&apikey={apiKey}";
             }
             else if (index == 2)
             {
-                RealmURI = "https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = $"https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey={apiKey}";
             }
             else if (index == 3)
             {
-                RealmURI = "https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                RealmURI = $"https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey={apiKey}";
             }
         }
         #endregion

@@ -21,6 +21,9 @@ namespace VisualPlugin.Sample1.User_Controls
 
     public partial class Character_Profile : UserControl
     {
+
+        string apiKey = WorldofWarcraft.APIKey;
+
         private static Character_Profile _instance;
 
         public static Character_Profile Instance {
@@ -69,7 +72,7 @@ namespace VisualPlugin.Sample1.User_Controls
             byte[] bytes = Encoding.Default.GetBytes(characterName.Text);
             charactername = Encoding.UTF8.GetString(bytes);
 
-            string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+            string characterAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?locale={locale}&apikey={apiKey}";
             try
             {
                 string characterJson = new WebClient().DownloadString(characterAPI);
@@ -114,7 +117,7 @@ namespace VisualPlugin.Sample1.User_Controls
             byte[] bytes = Encoding.Default.GetBytes(characterName.Text);
             charactername = Encoding.UTF8.GetString(bytes);
             //얼안
-            string gearAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?fields=items&locale={locale}&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+            string gearAPI = $"https://{region}.api.battle.net/wow/character/{realm}/{charactername}?fields=items&locale={locale}&apikey={apiKey}";
 
             var gearJson = new WebClient().DownloadString(gearAPI);
 

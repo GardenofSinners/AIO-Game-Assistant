@@ -12,6 +12,7 @@ namespace VisualPlugin.Sample1.User_Controls
     public partial class Auction_House : UserControl
     {
 
+        string apiKey = WorldofWarcraft.APIKey;
         private static Auction_House _instance;
 
         public static Auction_House Instance {
@@ -56,7 +57,7 @@ namespace VisualPlugin.Sample1.User_Controls
                 var test = System.AppDomain.CurrentDomain.BaseDirectory;
                 string currentDirectory = Path.GetFullPath(Path.Combine(test, @"..\..\..\"));
 
-                string auctionAPI = $"https://{region}.api.battle.net/wow/auction/data/{realm}?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb";
+                string auctionAPI = $"https://{region}.api.battle.net/wow/auction/data/{realm}?locale=en_US&apikey={apiKey}";
                 var realmAuctionJson = new WebClient().DownloadString(auctionAPI);
                 JObject dict = JObject.Parse(realmAuctionJson);
                 var AuctionJson = new WebClient().DownloadString((string)dict["files"][0]["url"]);

@@ -15,6 +15,8 @@ namespace VisualPlugin.Sample1.User_Controls
     
     public partial class Realm_Status : UserControl
     {
+        string apiKey = WorldofWarcraft.APIKey;
+
         public dynamic jss = new JavaScriptSerializer();
         private static Realm_Status _instance;
 
@@ -168,25 +170,25 @@ namespace VisualPlugin.Sample1.User_Controls
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             dataGridView1.Items.Clear();
-            GetRealms("https://us.api.battle.net/wow/realm/status?locale=en_GB&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms($"https://us.api.battle.net/wow/realm/status?locale=en_GB&apikey={apiKey}");
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             dataGridView1.Items.Clear();
-            GetRealms("https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms($"https://eu.api.battle.net/wow/realm/status?locale=en_US&apikey={apiKey}");
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
             dataGridView1.Items.Clear();
-            GetRealms("https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms($"https://kr.api.battle.net/wow/realm/status?locale=ko_KR&apikey={apiKey}");
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
             dataGridView1.Items.Clear();
-            GetRealms("https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey=647cu854qwp5tyuxvv7matdz3m9fkqzb");
+            GetRealms($"https://tw.api.battle.net/wow/realm/status?locale=zh_TW&apikey={apiKey}");
         }
     }
 }
