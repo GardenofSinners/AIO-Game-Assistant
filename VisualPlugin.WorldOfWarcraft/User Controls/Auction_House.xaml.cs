@@ -12,7 +12,7 @@ namespace VisualPlugin.Sample1.User_Controls
     public partial class Auction_House : UserControl
     {
 
-        string apiKey = WorldofWarcraft.APIKey;
+        dynamic apiKey = WorldofWarcraft.APIKey;
         private static Auction_House _instance;
 
         public static Auction_House Instance {

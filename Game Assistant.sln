@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualPlugin.UI", "VisualPl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualPlugin.Interfaces", "VisualPlugin.Interfaces\VisualPlugin.Interfaces.csproj", "{83BB4F15-675E-4864-85A4-D8CCB1F8B158}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualPlugin.WorldofWarcraft", "VisualPlugin.Sample1\VisualPlugin.WorldofWarcraft.csproj", "{81253A96-C08B-4DF2-8594-0BDDDEFF3E2C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualPlugin.WorldofWarcraft", "VisualPlugin.WorldofWarcraft\VisualPlugin.WorldofWarcraft.csproj", "{81253A96-C08B-4DF2-8594-0BDDDEFF3E2C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualPlugin.Visuals", "VisualPlugin.Visuals\VisualPlugin.Visuals.csproj", "{C5C2FD17-60C2-4574-BEDA-8BFEAA51A9EC}"
 EndProject

@@ -8,7 +8,6 @@ using System.Text;
 using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
 using System.Windows.Media.Imaging;
 
 namespace VisualPlugin.Sample1.User_Controls
@@ -17,7 +16,7 @@ namespace VisualPlugin.Sample1.User_Controls
     public partial class Guild_Profile : UserControl
     {
 
-        string apiKey = WorldofWarcraft.APIKey;
+        dynamic apiKey = WorldofWarcraft.APIKey;
 
         private static Guild_Profile _instance;
 

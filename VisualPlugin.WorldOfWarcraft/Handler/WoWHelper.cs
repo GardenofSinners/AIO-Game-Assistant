@@ -1,6 +1,4 @@
 ﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
@@ -11,7 +9,7 @@ namespace VisualPlugin.Sample1.Handler
 {
     public class WoWHelper
     {
-        string apiKey = WorldofWarcraft.APIKey;
+        dynamic apiKey = WorldofWarcraft.APIKey;
 
         public dynamic jss = new JavaScriptSerializer(); //JSON Deserializer
         public string RealmURI;

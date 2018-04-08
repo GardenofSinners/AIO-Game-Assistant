@@ -1,19 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using VisualPlugin.Sample1.Handler;
 
 namespace VisualPlugin.Sample1.User_Controls
@@ -22,7 +14,7 @@ namespace VisualPlugin.Sample1.User_Controls
     public partial class Character_Profile : UserControl
     {
 
-        string apiKey = WorldofWarcraft.APIKey;
+        dynamic apiKey = WorldofWarcraft.APIKey;
 
         private static Character_Profile _instance;
 

@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace VisualPlugin.UI
 {
-	public class PluginLoader<T> : IDisposable
+    public class PluginLoader<T> : IDisposable
 	{
 		private readonly CompositionContainer _container;
 

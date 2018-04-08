@@ -1,10 +1,10 @@
-﻿using System.ComponentModel.Composition;
-using Livet;
+﻿using Livet;
+using System.ComponentModel.Composition;
 using VisualPlugin.Interfaces;
 
 namespace VisualPlugin.Sample1
 {
-	[Export(typeof(IVisualPlugin))]
+    [Export(typeof(IVisualPlugin))]
 	public class WoWLauncher : NotificationObject, IVisualPlugin
 	{
 		#region Name 変更通知プロパティ

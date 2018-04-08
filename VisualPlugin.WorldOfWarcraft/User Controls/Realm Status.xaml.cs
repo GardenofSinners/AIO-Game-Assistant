@@ -6,16 +6,13 @@ using System.Web.Script.Serialization;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using VisualPlugin.Sample1.Handler;
-using System.IO;
 
 namespace VisualPlugin.Sample1.User_Controls
 {
-    
+
     public partial class Realm_Status : UserControl
     {
-        string apiKey = WorldofWarcraft.APIKey;
+        dynamic apiKey = WorldofWarcraft.APIKey;
 
         public dynamic jss = new JavaScriptSerializer();
         private static Realm_Status _instance;
